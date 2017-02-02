@@ -10,7 +10,7 @@ CREATE TABLE postgres.accounts
   login_count integer NOT NULL DEFAULT 0,
   account_type character varying(15) DEFAULT 'user'::character varying,
   account_state character varying(15) NOT NULL DEFAULT 'registered'::character varying,
-  CONSTRAINT accounts_pkey PRIMARY KEY (id),
+  CONSTRAINT pkey_accounts PRIMARY KEY (id),
   CONSTRAINT unique_accounts_name UNIQUE (name),
   CONSTRAINT unique_accounts_email UNIQUE (email),
   CONSTRAINT check_lower_email CHECK (email::text = lower(email::text))
