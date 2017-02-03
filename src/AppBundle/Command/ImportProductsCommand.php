@@ -27,18 +27,21 @@ class ImportProductsCommand extends Command {
      * @return void
      */
     protected function execute(InputInterface $input, OutputInterface $output) {
+        $output->writeln('Starting.');
+
         try {
             $csvFile = file($input->getArgument('file'));
+            $output->writeln('Processing file[' . $input->getArgument('file') . ']...');
         } catch (\Exception $e){
             $output->writeln('File[' . $input->getArgument('file') . '] not found.');
             return;
         }
 
-        $output->writeln('Processing file[' . $input->getArgument('file') . ']...');
+        foreach ($csvFile as $line) {
+            $productArray = explode(';', $line);
+            var_dump($productArray);die;
+        }
 
-//        $data = [];
-//        foreach ($csvFile as $line) {
-//            $data[] = str_getcsv($line);
-//        }
+        $output->writeln('Done.');
     }
 }

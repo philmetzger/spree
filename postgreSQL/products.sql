@@ -13,6 +13,8 @@ CREATE TABLE postgres.products
   color character varying(100),
   gender character varying(50),
   category_id bigserial,
+  created_at timestamp without time zone NOT NULL DEFAULT now(),
+  last_updated timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT pkey_categories PRIMARY KEY (id),
   CONSTRAINT fkey_categories_category_id FOREIGN KEY (category_id)
       REFERENCES postgres.categories (id) MATCH SIMPLE

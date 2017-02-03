@@ -6,8 +6,26 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+        <!-- Header -->
+        <div class="header-container">
+            {% block header %}{% endblock %}
+        </div>
+        <!-- End of Header -->
+
+        <!-- Page content -->
+        <div class="page-container" style="max-width: 1564px;">
+            {% block body %}{% endblock %}
+        </div>
+        <!-- End of Page content -->
+
+        <!-- Footer -->
+        <footer class="footer-container">
+            {% block footer %}{% endblock %}
+        </footer>
+        <!-- End of Footer -->
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

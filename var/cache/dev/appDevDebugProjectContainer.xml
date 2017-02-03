@@ -85,11 +85,11 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
+    <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">symfony</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_name">postgres</parameter>
+    <parameter key="database_user">postgres</parameter>
+    <parameter key="database_password">password</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -455,7 +455,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>Ede0hYKncA</argument>
                 <argument>0</argument>
-                <argument>IVAGo9iH8Gjs1KAkeJbqdg</argument>
+                <argument>wmGfHLePt0PuXIKS9kVsKf</argument>
                 <argument>C:\projects\spree\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -623,7 +623,7 @@
           <tag name="monolog.logger" channel="cache"/>
           <argument>opZAvBnSTA</argument>
           <argument>null</argument>
-          <argument>IVAGo9iH8Gjs1KAkeJbqdg</argument>
+          <argument>wmGfHLePt0PuXIKS9kVsKf</argument>
           <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
           <factory class="Symfony\Component\PropertyAccess\PropertyAccessor" method="createCache"/>
         </service>
@@ -644,7 +644,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>W7J1krm5al</argument>
       <argument>0</argument>
-      <argument>IVAGo9iH8Gjs1KAkeJbqdg</argument>
+      <argument>wmGfHLePt0PuXIKS9kVsKf</argument>
       <argument>C:\projects\spree\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -654,7 +654,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>NtbNjoovAt</argument>
       <argument>0</argument>
-      <argument>IVAGo9iH8Gjs1KAkeJbqdg</argument>
+      <argument>wmGfHLePt0PuXIKS9kVsKf</argument>
       <argument>C:\projects\spree\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1647,7 +1647,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58939dce532932.12000767</argument>
+            <argument>5894eefec0cc63.82094887</argument>
           </service>
         </argument>
       </argument>
@@ -1795,7 +1795,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58939dce532932.12000767</argument>
+            <argument>5894eefec0cc63.82094887</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2162,12 +2162,12 @@
     <service id="doctrine.dbal.logger.profiling.default" class="Doctrine\DBAL\Logging\DebugStack" public="false"/>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection">
       <argument type="collection">
-        <argument key="driver">pdo_mysql</argument>
-        <argument key="host">127.0.0.1</argument>
+        <argument key="driver">pdo_pgsql</argument>
+        <argument key="host">localhost</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">symfony</argument>
-        <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="dbname">postgres</argument>
+        <argument key="user">postgres</argument>
+        <argument key="password">password</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -2254,7 +2254,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="AppBundle">AppBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2267,7 +2269,19 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\projects\spree\src\AppBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>AppBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
