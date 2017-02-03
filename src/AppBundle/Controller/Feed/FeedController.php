@@ -1,12 +1,11 @@
 <?php
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Feed;
 
+use AppBundle\Application\Action;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Account;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
-class HomeController extends Controller {
+class FeedController extends Action {
     /**
      * @Route("/home")
      */

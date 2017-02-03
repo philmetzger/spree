@@ -15,11 +15,14 @@ CREATE TABLE postgres.products
   category_id bigserial,
   created_at timestamp without time zone NOT NULL DEFAULT now(),
   last_updated timestamp without time zone NOT NULL DEFAULT now(),
-  CONSTRAINT pkey_categories PRIMARY KEY (id),
-  CONSTRAINT fkey_categories_category_id FOREIGN KEY (category_id)
+  CONSTRAINT pkey_products PRIMARY KEY (id),
+  CONSTRAINT fkey_products_category_id FOREIGN KEY (category_id)
       REFERENCES postgres.categories (id) MATCH SIMPLE
-      ON UPDATE CASCADE ON DELETE SET NULL,
+      ON UPDATE CASCADE ON DELETE SET NULL
 )
 WITH (
   OIDS=FALSE
 );
+
+ALTER TABLE postgres.products
+  ADD CONSTRAINT pkey_products PRIMARY KEY(id);
