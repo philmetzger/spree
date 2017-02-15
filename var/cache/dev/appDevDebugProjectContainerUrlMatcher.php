@@ -110,6 +110,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::loginAction',  '_route' => 'app_application_authentication_login',);
         }
 
+        // app_application_authentication_signup
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::signupAction',  '_route' => 'app_application_authentication_signup',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

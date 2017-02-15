@@ -1,3 +1,7 @@
+body {
+    background-color: #f6f5f2;
+}
+
 .page-container {
     margin: 20px 0;
     min-height: 400px;
@@ -35,9 +39,10 @@
     transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
     height: 51px;
 }
-.header-main .item.right {
+.header-main .right {
     position: absolute;
     right: 0;
+    display: inherit;
 }
 .header-main .item:hover {
     background-color: #303e48;

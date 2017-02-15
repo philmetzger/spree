@@ -21,4 +21,11 @@ class AuthenticationController extends Action {
 
         return $this->render('application/login.html.twig', []);
     }
+
+    /**
+     * @Route("/signup")
+     */
+    public function signupAction() {
+        return $this->render('application/createAccount.html.twig', []);
+    }
 }
