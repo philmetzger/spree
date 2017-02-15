@@ -3,29 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/semantic.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/default.css') }}" />
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
 
     <body>
-        <!-- Header -->
-        <div class="header-container">
-            {% block header %}{% endblock %}
+        <div class="body-container">
+            <!-- Header -->
+            <div class="header-container">
+                {% block header %}
+                    <div class="ui top fixed menu">
+                        <div class="item">
+                            <img src="/images/logo.png">
+                        </div>
+                        <a class="item">Features</a>
+                        <a class="item">Testimonials</a>
+                        <a class="item">Sign-in</a>
+                    </div>
+                    <div class="ui bottom fixed menu">
+                        <div class="item">
+                            <img src="/images/logo.png">
+                        </div>
+                        <a class="item">Features</a>
+                        <a class="item">Testimonials</a>
+                        <a class="item">Sign-in</a>
+                    </div>
+                {% endblock %}
+            </div>
+            <!-- End of Header -->
+
+            <!-- Page content -->
+            <div class="page-container ui container">
+                {% block body %}{% endblock %}
+            </div>
+            <!-- End of Page content -->
+
+            <!-- Footer -->
+            <footer class="footer-container">
+                {% block footer %}{% endblock %}
+            </footer>
+            <!-- End of Footer -->
         </div>
-        <!-- End of Header -->
-
-        <!-- Page content -->
-        <div class="page-container" style="max-width: 1564px;">
-            {% block body %}{% endblock %}
-        </div>
-        <!-- End of Page content -->
-
-        <!-- Footer -->
-        <footer class="footer-container">
-            {% block footer %}{% endblock %}
-        </footer>
-        <!-- End of Footer -->
-
-        {% block javascripts %}{% endblock %}
     </body>
+
+    {% block javascripts %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
+    </script>
+    <script href="{{ asset('bundles/app/js/semantic.js') }}" />
 </html>

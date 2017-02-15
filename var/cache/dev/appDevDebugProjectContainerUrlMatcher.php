@@ -105,6 +105,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // app_application_authentication_login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::loginAction',  '_route' => 'app_application_authentication_login',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -115,7 +120,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // app_feed_feed_test
-        if ($pathinfo === '/home') {
+        if ($pathinfo === '/feed') {
             return array (  '_controller' => 'AppBundle\\Controller\\Feed\\FeedController::testAction',  '_route' => 'app_feed_feed_test',);
         }
 

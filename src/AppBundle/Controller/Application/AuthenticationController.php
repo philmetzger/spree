@@ -1,15 +1,16 @@
 <?php
-namespace AppBundle\Controller\Feed;
+namespace AppBundle\Controller\Application;
 
 use AppBundle\Application\Action;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Account;
 
-class FeedController extends Action {
+class AuthenticationController extends Action {
+
     /**
-     * @Route("/feed")
+     * @Route("/login")
      */
-    public function testAction() {
+    public function loginAction() {
         $account = new Account();
         $account->setUsername('Strange Quirks');
 
@@ -18,6 +19,6 @@ class FeedController extends Action {
 //        $em->persist($account);
 //        $em->flush();
 
-        return $this->render('feed/feed.html.twig', []);
+        return $this->render('application/login.html.twig', []);
     }
 }
