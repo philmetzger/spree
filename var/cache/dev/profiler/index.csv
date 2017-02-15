@@ -287,3 +287,11 @@ c0bcbf,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_loc
 fca2af,127.0.0.1,GET,http://localhost:8000/feed,1487194448,,200
 453db8,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487194451,525450,200
 525450,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487194451,,404
+fc6d43,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1487195834,ba4975,200
+ba4975,127.0.0.1,GET,http://localhost:8000/feed,1487195835,,200
+c99b6c,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487195837,0072bb,200
+0072bb,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487195837,,404
+38e2a5,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1487195927,936c11,200
+936c11,127.0.0.1,GET,http://localhost:8000/feed,1487195927,,200
+7d1a11,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487195931,7406b8,200
+7406b8,127.0.0.1,GET,http://localhost:8000/images/logo.png,1487195931,,404
