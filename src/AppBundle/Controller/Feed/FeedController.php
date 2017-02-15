@@ -10,8 +10,8 @@ class FeedController extends Action {
      * @Route("/feed")
      */
     public function testAction() {
-        $account = new Account();
-        $account->setUsername('Strange Quirks');
+//        $account = new Account();
+//        $account->setUsername('Strange Quirks');
 
 //        $em = $this->getDoctrine()->getManager();
 //
