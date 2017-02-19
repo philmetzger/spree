@@ -11,6 +11,10 @@ body {
     margin-top: 50px;
 }
 
+.container-home {
+    margin-top: 20px;
+}
+
 /* HEADER */
 .header-main {
     background-color: #4a5a66;
