@@ -3,13 +3,19 @@ body {
 }
 
 .page-container {
-    margin: 20px 0;
     min-height: 400px;
 }
 
+.container-signup,
+.container-login {
+    margin-top: 50px;
+}
+
+/* HEADER */
 .header-main {
     background-color: #4a5a66;
     height: 51px;
+    border-bottom: 1px solid #3c4c58;
 }
 .header-main .header-main-content {
     display: -webkit-box;
@@ -47,3 +53,14 @@ body {
 .header-main .item:hover {
     background-color: #303e48;
 }
+
+.header-main-content .item.active {
+    background-color: #303e48;
+}
+/* END HEADER */
+
+/* SEMANTIC-UI */
+.ui.grid {
+    margin-top: 0;
+}
+/* END SEMANTIC-UI */

@@ -2,12 +2,19 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="postgres.accounts")
  */
 class Account {
+
+    const ACCOUNT_STATE_REGISTERED = 'registered';
+    const ACCOUNT_STATE_ACTIVE = 'active';
+
+    const ACCOUNT_TYPE_USER = 'user';
+    const ACCOUNT_TYPE_ADMIN = 'admin';
 
     /**
      * @ORM\Column(type="integer", nullable=false)
@@ -20,30 +27,52 @@ class Account {
     /**
      * @ORM\Column(type="string", length=256, nullable=false)
      * @param string $username
+     * @Assert\NotBlank(
+     *      message="Your username cannot be blank"
+     * )
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=256)
-     * @param string $firstname
+     * @ORM\Column(name="display_name", type="string", length=256)
+     * @param string $displayName
+     * @Assert\NotBlank(
+     *      message="Your name cannot be blank"
+     * )
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Your name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your name cannot be longer than {{ limit }} characters"
+     * )
      */
-    private $firstname;
-
-    /**
-     * @ORM\Column(type="string", length=256)
-     * @param string $lastname
-     */
-    private $lastname;
+    private $displayName;
 
     /**
      * @ORM\Column(type="string", length=256, nullable=false)
      * @param string $email
+     * @Assert\NotBlank(
+     *      message="Your email cannot be blank"
+     * )
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not valid.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=1024, nullable=false)
      * @param string $password
+     * @Assert\NotBlank(
+     *      message="Your password cannot be blank"
+     * )
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 255,
+     *      minMessage = "Your password must be at least {{ limit }} characters long",
+     *      maxMessage = "Your password cannot be longer than {{ limit }} characters"
+     * )
      */
     private $password;
 
@@ -68,12 +97,14 @@ class Account {
     /**
      * @ORM\Column(name="account_type", type="string", length=16, nullable=false)
      * @param string $accountType
+     * @Assert\NotBlank()
      */
     private $accountType;
 
     /**
      * @ORM\Column(name="account_state", type="string", length=16, nullable=false)
      * @param string $accountState
+     * @Assert\NotBlank()
      */
     private $accountState;
 
@@ -101,29 +132,15 @@ class Account {
     /**
      * @return string
      */
-    public function getFirstname() {
-        return $this->firstname;
+    public function getDisplayName() {
+        return $this->displayName;
     }
 
     /**
-     * @param string $firstname
+     * @param string $displayName
      */
-    public function setFirstname($firstname) {
-        $this->firstname = $firstname;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastname() {
-        return $this->lastname;
-    }
-
-    /**
-     * @param string $lastname
-     */
-    public function setLastname($lastname) {
-        $this->lastname = $lastname;
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
     }
 
     /**

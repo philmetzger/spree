@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/profile.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="ui container-profile">
+        <div class="profile-header">
+            <div class="profile-header__image">
+                <i class="user massive icon"></i>
+            </div>
+            <div class="profile-header__name">
+                <h1 class="ui huge header">{{ name }}</h1>
+            </div>
+        </div>
+        <div class="profile-menu">
+
+        </div>
+        <div class="profile-content">
+            <div class="ui dropdown">
+                <input type="hidden" name="gender">
+                <i class="dropdown icon"></i>
+                <div class="default text">Gender</div>
+                <div class="menu">
+                    <div class="item" data-value="male">Male</div>
+                    <div class="item" data-value="female">Female</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script href="{{ asset('bundles/app/js/profile.js') }}" />
+{% endblock %}

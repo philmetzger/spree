@@ -1,0 +1,18 @@
+.profile-header {
+    height: 200px;
+    background-color: #3c7f7b;
+    border-bottom: 1px solid #33736f;
+    text-align: center;
+    padding-top: 20px;
+}
+.profile-menu {
+    background-color: #ffffff;
+    height: 50px;
+    border-bottom: 2px solid #eaeaea;
+}
+.profile-header .profile-header__image i {
+    color: #ffffff;
+}
+.profile-header .profile-header__name h1 {
+    color: #ffffff;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block body %}
+    <div class="ui text container container-signup">
+        <div class="ui two column centered grid">
+            <div class="column">
+                <h1 class="ui huge header">Create your account</h1>
+
+                {% if errors is defined %}
+                    <div class="ui error message">
+                        <div class="header">Your account could not be created</div>
+                        <ul>
+                            {% for error in errors %}
+                                <li>{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <form class="ui form" method="post">
+                    <div class="field">
+                        <input type="text" name="displayName" placeholder="Full name">
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="field">
+                        <div class="ui">
+                            By signing up, you agree to the <a href="/legal/termsAndConditions">Terms of Service</a> and <a href="/legal/privacy">Privacy Policy</a>, including cookie use.
+                        </div>
+                    </div>
+                    <button class="ui fluid primary button" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

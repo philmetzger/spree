@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('bundles/app/css/semantic.css') }}" />
         <link rel="stylesheet" href="{{ asset('bundles/app/css/default.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/icon.css') }}" />
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -20,7 +21,7 @@
             <!-- End of Header -->
 
             <!-- Page content -->
-            <div class="page-container ui container">
+            <div class="page-container ui">
                 {% block body %}{% endblock %}
             </div>
             <!-- End of Page content -->
@@ -33,10 +34,10 @@
         </div>
     </body>
 
-    {% block javascripts %}{% endblock %}
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous">
     </script>
     <script href="{{ asset('bundles/app/js/semantic.js') }}" />
+    {% block javascripts %}{% endblock %}
 </html>

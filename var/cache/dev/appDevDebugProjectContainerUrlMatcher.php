@@ -105,14 +105,35 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // app_application_authentication_login
-        if ($pathinfo === '/login') {
-            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::loginAction',  '_route' => 'app_application_authentication_login',);
+        if (0 === strpos($pathinfo, '/log')) {
+            // login
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::loginAction',  '_route' => 'login',);
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::logoutAction',  '_route' => 'logout',);
+            }
+
         }
 
-        // app_application_authentication_signup
+        // signup
         if ($pathinfo === '/signup') {
-            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::signupAction',  '_route' => 'app_application_authentication_signup',);
+            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AuthenticationController::signupAction',  '_route' => 'signup',);
+        }
+
+        if (0 === strpos($pathinfo, '/legal')) {
+            // terms
+            if ($pathinfo === '/legal/termsAndConditions') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Application\\LegalController::termsAction',  '_route' => 'terms',);
+            }
+
+            // privacy
+            if ($pathinfo === '/legal/privacy') {
+                return array (  '_controller' => 'AppBundle\\Controller\\Application\\LegalController::privacyAction',  '_route' => 'privacy',);
+            }
+
         }
 
         // homepage
@@ -124,9 +145,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_feed_feed_test
+        // feed
         if ($pathinfo === '/feed') {
-            return array (  '_controller' => 'AppBundle\\Controller\\Feed\\FeedController::testAction',  '_route' => 'app_feed_feed_test',);
+            return array (  '_controller' => 'AppBundle\\Controller\\Feed\\FeedController::feedAction',  '_route' => 'feed',);
+        }
+
+        // profile
+        if (0 === strpos($pathinfo, '/profile') && preg_match('#^/profile(?:/(?P<username>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'profile')), array (  'username' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileController::profileAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
