@@ -10,9 +10,16 @@
                 <a class="item{% if menu.isLogin == true %} active{% endif %}" href="/login">Log in</a>
             {% endif %}
             {% if isLoggedIn == true %}
-                <a class="item{% if menu.isProfile == true %} active{% endif %}" href="/profile/{{ username }}">
+                <div class="item{% if menu.isProfile == true %} active{% endif %}">
                     <i class="user large icon"></i>
-                </a>
+                    <div class="ui pointing dropdown">
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" data-value="drop" href="/profile/{{ username }}">Profile</a>
+                            <a class="item" data-value="drop" href="/logout}">Log out</a>
+                        </div>
+                    </div>
+                </div>
             {% endif %}
         </div>
     </div>
