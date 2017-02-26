@@ -30,6 +30,16 @@ class Account {
      * @Assert\NotBlank(
      *      message="Your username cannot be blank"
      * )
+     * @Assert\Regex(
+     *     pattern="/^[a-zA-Z0-9_]*$/",
+     *     message="Your username can only contain letters, numbers, and underscores"
+     * )
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Your username must be at least {{ limit }} characters long",
+     *      maxMessage = "Your username cannot be longer than {{ limit }} characters"
+     * )
      */
     private $username;
 

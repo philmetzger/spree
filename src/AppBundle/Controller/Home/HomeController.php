@@ -9,7 +9,7 @@ class HomeController extends Action {
     /**
      * @Route("/home", name="home")
      */
-    public function feedAction() {
+    public function homeAction() {
         return $this->render('home/home.html.twig', []);
     }
 }

@@ -11,7 +11,7 @@ class ProfileController extends Action {
      */
     public function profileAction($username = null) {
         if (is_null($username)) {
-            return $this->redirectToRoute('feed');
+            return $this->redirectToRoute('home');
         }
 
         $data = [];

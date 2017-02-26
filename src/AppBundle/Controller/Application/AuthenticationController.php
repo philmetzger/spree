@@ -53,7 +53,7 @@ class AuthenticationController extends Action {
 
         $authenticationService->endSession();
 
-        return $this->redirectToRoute('feed');
+        return $this->redirectToRoute('home');
     }
 
     /**
@@ -69,14 +69,13 @@ class AuthenticationController extends Action {
         if ($request->isMethod('post')) {
             $account = new Account();
             $account->setDisplayName($request->get('displayName'));
-            $account->setUsername('strangeQuirks');
+            $account->setUsername($request->get('username'));
             $account->setEmail($request->get('email'));
             $account->setPassword($request->get('password'));
             $account->setAccountType(Account::ACCOUNT_TYPE_USER);
             $account->setAccountState(Account::ACCOUNT_STATE_REGISTERED);
 
-            $validator = $this->get('validator');
-            $errors = $validator->validate($account);
+            $errors = $this->validateAccount($account);
             if (count($errors) > 0) {
                 return $this->render('application/signup.html.twig', [
                     'errors' => $errors
@@ -84,8 +83,7 @@ class AuthenticationController extends Action {
             }
 
             $accountService = $this->get('app.account');
-            $accountCreated = $accountService->createAccount($account);
-            if (!$accountCreated) {
+            if (!$accountService->createAccount($account)) {
                 return $this->render('application/signup.html.twig', [
                     'errors' => [
                         'Account could not be created'
@@ -99,5 +97,16 @@ class AuthenticationController extends Action {
         }
 
         return $this->render('application/signup.html.twig', []);
+    }
+
+    /**
+     * @param Account $account
+     * @return mixed
+     */
+    private function validateAccount($account) {
+        $validator = $this->get('validator');
+        $errors = $validator->validate($account);
+
+        return $errors;
     }
 }

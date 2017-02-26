@@ -147,7 +147,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // home
         if ($pathinfo === '/home') {
-            return array (  '_controller' => 'AppBundle\\Controller\\Home\\HomeController::feedAction',  '_route' => 'home',);
+            return array (  '_controller' => 'AppBundle\\Controller\\Home\\HomeController::homeAction',  '_route' => 'home',);
         }
 
         // profile

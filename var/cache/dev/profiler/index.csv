@@ -1504,3 +1504,14 @@ bc0d94,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_loc
 b4be44,127.0.0.1,GET,http://localhost:8000/profile/strangeQuirks,1487885576,,200
 5f3395,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1487886999,ed21ab,200
 ed21ab,127.0.0.1,GET,http://localhost:8000/profile/strangeQuirks,1487886999,,200
+5a9027,127.0.0.1,GET,http://localhost:8000/logout,1488106939,079e62,200
+079e62,127.0.0.1,GET,http://localhost:8000/logout,1488106940,,500
+78c28d,127.0.0.1,GET,http://localhost:8000/logout,1488107064,,302
+f63adc,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488107065,d4a2d6,200
+d4a2d6,127.0.0.1,GET,http://localhost:8000/home,1488107065,,200
+09e9b3,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488107071,aa23e6,200
+aa23e6,127.0.0.1,GET,http://localhost:8000/signup,1488107071,,200
+7590a2,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488107944,0d67c5,200
+0d67c5,127.0.0.1,GET,http://localhost:8000/signup,1488107944,,200
+386f45,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488107993,3e0692,200
+3e0692,127.0.0.1,GET,http://localhost:8000/signup,1488107993,,200
