@@ -3,16 +3,18 @@
         <a class="item" href="/feed">
             <i class="leaf big icon"></i>
         </a>
-        <a class="item{% if menu.isFeed == true %} active{% endif %}" href="/home">Home</a>
+        <a class="item{% if menu.isHome == true %} active{% endif %}" href="/home">Home</a>
         <div class="right">
             {% if isLoggedIn == false %}
                 <a class="item{% if menu.isSignup == true %} active{% endif %}" href="/signup">Sign up</a>
                 <a class="item{% if menu.isLogin == true %} active{% endif %}" href="/login">Log in</a>
             {% endif %}
             {% if isLoggedIn == true %}
-                <div class="item ui pointing dropdown top left">
-                    <i class="user large icon"></i>
-                    <i class="dropdown icon"></i>
+                <div class="item ui dropdown top left">
+                    <span>
+                        <i class="user large icon"></i>
+                        <i class="dropdown icon"></i>
+                    </span>
                     <div class="menu">
                         <a class="item" data-value="drop" href="/profile/{{ username }}">Profile</a>
                         <a class="item" data-value="drop" href="/logout">Log out</a>

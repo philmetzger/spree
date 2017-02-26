@@ -17,7 +17,7 @@ class AuthenticationController extends Action {
         /* @var SessionService $session */
         $session = $this->get('app.session');
         if ($session->isLoggedIn()) {
-            return $this->redirectToRoute('feed');
+            return $this->redirectToRoute('home');
         }
 
         $data = [];
@@ -34,7 +34,7 @@ class AuthenticationController extends Action {
                 ]);
             }
 
-            return $this->redirectToRoute('feed');
+            return $this->redirectToRoute('home');
         } else {
             if ($request->get('username')) {
                 $data['username'] = $request->get('username');
@@ -63,7 +63,7 @@ class AuthenticationController extends Action {
         /* @var SessionService $session */
         $session = $this->get('app.session');
         if ($session->isLoggedIn()) {
-            return $this->redirectToRoute('feed');
+            return $this->redirectToRoute('home');
         }
 
         if ($request->isMethod('post')) {

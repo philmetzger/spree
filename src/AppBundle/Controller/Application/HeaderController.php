@@ -19,14 +19,16 @@ class HeaderController extends Action {
             }
         }
 
+        $currentRunningRoute = $this->container->get('request_stack')->getMasterRequest()->get('_route');
+
         $data = [
             'isLoggedIn' => $session->isLoggedIn(),
             'username' => $username,
             'menu' => [
-                'isSignup' => $_SERVER["REQUEST_URI"] == '/signup',
-                'isLogin' => $_SERVER["REQUEST_URI"] == '/login',
-                'isFeed' => $_SERVER["REQUEST_URI"] == '/feed',
-                'isProfile' => $_SERVER["REQUEST_URI"] == '/profile',
+                'isSignup' => $currentRunningRoute == 'signup',
+                'isLogin' => $currentRunningRoute == 'login',
+                'isHome' => $currentRunningRoute == 'home',
+                'isProfile' => $currentRunningRoute == 'profile',
             ]
         ];
 
