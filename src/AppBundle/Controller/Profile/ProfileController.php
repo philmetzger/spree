@@ -12,6 +12,16 @@ class ProfileController extends Action {
     const SUBMENU_FOLLOWINGS = 'followings';
 
     /**
+     * @var array
+     */
+    private $constants = [
+        self::SUBMENU_PRODUCTS,
+        self::SUBMENU_COLLETIONS,
+        self::SUBMENU_FOLLOWERS,
+        self::SUBMENU_FOLLOWINGS,
+    ];
+
+    /**
      * @Route("/profile/{username}", name="profile")
      * @Route("/profile/{username}/{submenu}")
      */
@@ -34,8 +44,44 @@ class ProfileController extends Action {
         $data['username'] = $account->getUsername();
         $data['description'] = $account->getDescription();
         $data['firstLetter'] = mb_substr($account->getDisplayName(), 0, 1, 'utf-8');
-        $data['submenu'] = $submenu ?: 'products';
+        $data['submenu'] = $this->getSubmenu($submenu) ?: 'products';
+
+        $data['urls'] = [
+            'profileProductsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_PRODUCTS,
+            'profileCollectionsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_COLLETIONS,
+            'profileFollowersUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_FOLLOWERS,
+            'profileFollowingsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_FOLLOWINGS,
+        ];
+
+        $data['title'] = $this->getTitle($username, $submenu);
 
         return $this->render('profile/profile.html.twig', $data);
+    }
+
+    /**
+     * @param string $username
+     * @param string|null $submenu
+     * @return string
+     */
+    private function getTitle($username, $submenu) {
+        $title = $username;
+
+        if ($submenu) {
+            $title .= ' | ' . $submenu;
+        }
+
+        return $title;
+    }
+
+    /**
+     * @param string|null $submenu
+     * @return null|string
+     */
+    private function getSubmenu($submenu) {
+        if (in_array($submenu, $this->constants)) {
+            return $submenu;
+        }
+
+        return null;
     }
 }

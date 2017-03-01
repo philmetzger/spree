@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('bundles/app/css/profile.css') }}" />
 {% endblock %}
@@ -27,10 +27,10 @@
         </div>
         <div class="profile-content">
             <div class="ui four item menu">
-                <a class="item{% if submenu == 'products' %} active{% endif %}">Products</a>
-                <a class="item{% if submenu == 'collections' %} active{% endif %}">Collections</a>
-                <a class="item{% if submenu == 'followers' %} active{% endif %}">Followers</a>
-                <a class="item{% if submenu == 'followings' %} active{% endif %}">Followings</a>
+                <a class="item{% if submenu == 'products' %} active{% endif %}" href="{{ urls.profileProductsUrls }}">Products</a>
+                <a class="item{% if submenu == 'collections' %} active{% endif %}" href="{{ urls.profileCollectionsUrls }}">Collections</a>
+                <a class="item{% if submenu == 'followers' %} active{% endif %}" href="{{ urls.profileFollowersUrls }}">Followers</a>
+                <a class="item{% if submenu == 'followings' %} active{% endif %}" href="{{ urls.profileFollowingsUrls }}">Followings</a>
             </div>
             <div class="profile-content-content">
                 This is the content
