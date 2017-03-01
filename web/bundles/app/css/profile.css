@@ -48,7 +48,7 @@
 }
 
 .profile-content {
-    padding: 0;
+    padding: 0 20px 0 10px;
     font-size: 100%;
     vertical-align: baseline;
     border: 0;
