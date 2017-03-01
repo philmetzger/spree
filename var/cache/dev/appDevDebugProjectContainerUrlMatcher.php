@@ -150,9 +150,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\Home\\HomeController::homeAction',  '_route' => 'home',);
         }
 
-        // profile
-        if (0 === strpos($pathinfo, '/profile') && preg_match('#^/profile(?:/(?P<username>[^/]++))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'profile')), array (  'username' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileController::profileAction',));
+        if (0 === strpos($pathinfo, '/profile')) {
+            // profile
+            if (preg_match('#^/profile(?:/(?P<username>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'profile')), array (  'username' => NULL,  'submenu' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileController::profileAction',));
+            }
+
+            // app_profile_profile_profile
+            if (preg_match('#^/profile(?:/(?P<username>[^/]++)(?:/(?P<submenu>[^/]++))?)?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_profile_profile')), array (  'username' => NULL,  'submenu' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileController::profileAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

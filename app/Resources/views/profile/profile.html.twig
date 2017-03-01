@@ -27,10 +27,10 @@
         </div>
         <div class="profile-content">
             <div class="ui four item menu">
-                <a class="active item">Products</a>
-                <a class="item">Collections</a>
-                <a class="item">Followers</a>
-                <a class="item">Followings</a>
+                <a class="item{% if submenu == 'products' %} active{% endif %}">Products</a>
+                <a class="item{% if submenu == 'collections' %} active{% endif %}">Collections</a>
+                <a class="item{% if submenu == 'followers' %} active{% endif %}">Followers</a>
+                <a class="item{% if submenu == 'followings' %} active{% endif %}">Followings</a>
             </div>
             <div class="profile-content-content">
                 This is the content
