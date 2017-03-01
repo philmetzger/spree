@@ -59,6 +59,12 @@ class Account {
     private $displayName;
 
     /**
+     * @ORM\Column(name="description", type="string")
+     * @param string $description
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="string", length=256, nullable=false)
      * @param string $email
      * @Assert\NotBlank(
@@ -151,6 +157,20 @@ class Account {
      */
     public function setDisplayName($displayName) {
         $this->displayName = $displayName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description) {
+        $this->description = $description;
     }
 
     /**

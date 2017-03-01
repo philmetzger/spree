@@ -15,6 +15,12 @@ body {
     margin-top: 20px;
 }
 
+.no-javascript {
+    width: 600px;
+    margin: 20px auto 20px !important;
+    text-align: center;
+}
+
 /* HEADER */
 .header-main {
     background-color: #4a5a66;

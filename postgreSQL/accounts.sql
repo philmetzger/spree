@@ -3,6 +3,7 @@ CREATE TABLE postgres.accounts
   id bigserial NOT NULL,
   username character varying(255) NOT NULL,
   display_name character varying(255) DEFAULT ''::character varying,
+  description text,
   email character varying(255) NOT NULL,
   password character varying(1023) NOT NULL DEFAULT ''::character varying,
   registration_date timestamp without time zone NOT NULL DEFAULT now(),

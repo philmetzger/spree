@@ -612,7 +612,7 @@ a {
 
 a:hover {
   color: #3c7f7b;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /*******************************

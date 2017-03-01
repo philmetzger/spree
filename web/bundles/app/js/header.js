@@ -1,5 +1,5 @@
 $('.dropdown')
     .dropdown({
-        transition: 'drop'
+        transition: 'slide down'
     })
 ;
