@@ -8,8 +8,6 @@ class ProfileController extends Action {
 
     const SUBMENU_PRODUCTS = 'products';
     const SUBMENU_COLLETIONS = 'collections';
-    const SUBMENU_FOLLOWERS = 'followers';
-    const SUBMENU_FOLLOWINGS = 'followings';
 
     /**
      * @var array
@@ -17,8 +15,6 @@ class ProfileController extends Action {
     private $constants = [
         self::SUBMENU_PRODUCTS,
         self::SUBMENU_COLLETIONS,
-        self::SUBMENU_FOLLOWERS,
-        self::SUBMENU_FOLLOWINGS,
     ];
 
     /**
@@ -49,8 +45,6 @@ class ProfileController extends Action {
         $data['urls'] = [
             'profileProductsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_PRODUCTS,
             'profileCollectionsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_COLLETIONS,
-            'profileFollowersUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_FOLLOWERS,
-            'profileFollowingsUrls' => '/profile/' . $account->getUsername() . '/' . self::SUBMENU_FOLLOWINGS,
         ];
 
         $data['title'] = $this->getTitle($username, $submenu);
