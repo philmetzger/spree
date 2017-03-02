@@ -7,6 +7,12 @@ services:
   app.account:
     class: AppBundle\Service\AccountService
     arguments: ['@doctrine']
+  app.category:
+    class: AppBundle\Service\CategoryService
+    arguments: ['@doctrine']
+  app.product:
+    class: AppBundle\Service\ProductService
+    arguments: ['@doctrine']
   app.authentication:
     class: AppBundle\Service\AuthenticationService
     arguments: ['@app.account', '@session']

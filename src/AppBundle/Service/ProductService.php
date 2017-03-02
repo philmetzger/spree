@@ -1,13 +1,13 @@
 <?php
 namespace AppBundle\Service;
 
-use AppBundle\Entity\Category;
+use AppBundle\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
 /**
- * Class CategoryService
+ * Class ProductService
  */
-class CategoryService {
+class ProductService {
 
     /**
      * @var Registry
@@ -22,14 +22,14 @@ class CategoryService {
     }
 
     /**
-     * @param int $categoryId
-     * @return null|Category
+     * @param int $productId
+     * @return null|Product
      */
-    public function getById($categoryId) {
+    public function getById($productId) {
         $entity = $this->doctrine
-            ->getRepository('AppBundle:Category')
+            ->getRepository('AppBundle:Product')
             ->findOneBy([
-                'id' => $categoryId
+                'id' => $productId
             ]);
         if (!$entity) {
             return null;

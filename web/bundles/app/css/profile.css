@@ -55,3 +55,7 @@
     background: transparent;
     margin: 0 0 0 355px;
 }
+
+.profile-content .ui.menu .active {
+    font-weight: bold;
+}
