@@ -17,7 +17,7 @@
 }
 
 .profile-image-container {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .profile-image-container .image {
@@ -27,11 +27,11 @@
 }
 
 .profile-image {
-    width: 80px;
-    height: 80px;
-    font-size: 50px;
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
     position: relative;
-    top: 30px;
+    top: 65px;
 }
 
 .profile-name .header {

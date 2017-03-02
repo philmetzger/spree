@@ -398,6 +398,12 @@
     <service id="app.account" class="AppBundle\Service\AccountService">
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="app.category" class="AppBundle\Service\CategoryService">
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="app.product" class="AppBundle\Service\ProductService">
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="app.authentication" class="AppBundle\Service\AuthenticationService">
       <argument type="service" id="app.account"/>
       <argument type="service" id="session"/>
@@ -465,7 +471,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>Ede0hYKncA</argument>
                 <argument>0</argument>
-                <argument>LxCRZ6+7fRebtIDq6FKeOZ</argument>
+                <argument>mK3cm137M7FO2jSDZ9HVXj</argument>
                 <argument>C:\projects\spree\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -633,7 +639,7 @@
           <tag name="monolog.logger" channel="cache"/>
           <argument>opZAvBnSTA</argument>
           <argument>null</argument>
-          <argument>LxCRZ6+7fRebtIDq6FKeOZ</argument>
+          <argument>mK3cm137M7FO2jSDZ9HVXj</argument>
           <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
           <factory class="Symfony\Component\PropertyAccess\PropertyAccessor" method="createCache"/>
         </service>
@@ -654,7 +660,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>W7J1krm5al</argument>
       <argument>0</argument>
-      <argument>LxCRZ6+7fRebtIDq6FKeOZ</argument>
+      <argument>mK3cm137M7FO2jSDZ9HVXj</argument>
       <argument>C:\projects\spree\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -664,7 +670,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>NtbNjoovAt</argument>
       <argument>0</argument>
-      <argument>LxCRZ6+7fRebtIDq6FKeOZ</argument>
+      <argument>mK3cm137M7FO2jSDZ9HVXj</argument>
       <argument>C:\projects\spree\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1657,7 +1663,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58a8d610d9c988.84248797</argument>
+            <argument>58b888dc5cebb3.70660704</argument>
           </service>
         </argument>
       </argument>
@@ -1805,7 +1811,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58a8d610d9c988.84248797</argument>
+            <argument>58b888dc5cebb3.70660704</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
