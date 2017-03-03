@@ -69,6 +69,27 @@ body {
 }
 /* END HEADER */
 
+/* FOOTER */
+.footer-main-content {
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #bbbbbb;
+}
+.footer-main-content .item {
+    padding: 0 2px;
+    color: #bbbbbb;
+}
+.footer-main-content .left {
+    float: left;
+}
+.footer-main-content .right {
+    float: right;
+}
+/* END FOOTER */
+
 /* SEMANTIC-UI */
 .ui.grid {
     margin-top: 0;

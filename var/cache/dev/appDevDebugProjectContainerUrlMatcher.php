@@ -105,6 +105,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Application\\AboutController::contactAction',  '_route' => 'contact',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             // login
             if ($pathinfo === '/login') {
