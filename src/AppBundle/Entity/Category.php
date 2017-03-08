@@ -10,9 +10,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Category {
 
-    const CATEGORY_TYPE_FASHION = 'fashion';
-    const CATEGORY_TYPE_ACCESSORY = 'accessory';
-    const CATEGORY_TYPE_SHOE = 'shoe';
+    const CATEGORY_TYPE_FASHION = 1;
+    const CATEGORY_TYPE_ACCESSORY = 2;
+    const CATEGORY_TYPE_SHOE = 3;
 
     /**
      * @ORM\Column(type="integer", nullable=false)

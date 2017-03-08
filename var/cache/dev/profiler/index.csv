@@ -2127,3 +2127,12 @@ dc29bc,127.0.0.1,GET,http://localhost:8000/profile/strangeQuirks,1488583389,,200
 03eb50,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488583393,e54c44,200
 d5b418,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CFooter%253Afooter,1488583393,e54c44,200
 e54c44,127.0.0.1,GET,http://localhost:8000/home,1488583393,,200
+59f3e8,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488583621,31dc35,200
+afed23,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CFooter%253Afooter,1488583621,31dc35,200
+31dc35,127.0.0.1,GET,http://localhost:8000/home,1488583621,,200
+3ff20a,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488583623,9e988c,200
+6f7fc4,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CFooter%253Afooter,1488583623,9e988c,200
+9e988c,127.0.0.1,GET,http://localhost:8000/home,1488583623,,200
+005483,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CHeader%253Aheader,1488584100,6aaad1,200
+7945c9,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253AApplication%255CFooter%253Afooter,1488584100,6aaad1,200
+6aaad1,127.0.0.1,GET,http://localhost:8000/home,1488584100,,200

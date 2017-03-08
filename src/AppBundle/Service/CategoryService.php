@@ -37,4 +37,23 @@ class CategoryService {
 
         return $entity;
     }
+
+    /**
+     * @deprecated Name is not indexed yet.
+     *
+     * @param string $categoryName
+     * @return null|Category
+     */
+    public function getByName($categoryName) {
+        $entity = $this->doctrine
+            ->getRepository('AppBundle:Category')
+            ->findOneBy([
+                'name' => $categoryName
+            ]);
+        if (!$entity) {
+            return null;
+        }
+
+        return $entity;
+    }
 }
