@@ -1,10 +1,12 @@
 <?php
 namespace AppBundle\Command\Product;
 
+use AppBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Class Import
@@ -37,12 +39,21 @@ class ImportCategoriesCommand extends ContainerAwareCommand {
             return;
         }
 
+        /* @var \AppBundle\Service\CategoryService $categoryService */
         $categoryService = $this->getContainer()->get('app.category');
-        var_dump($categoryService);die;
 
         foreach ($csvFile as $line) {
             $productArray = explode(';', $line);
-            var_dump($productArray);die;
+            $mainCategoryName = $productArray[0];
+            $subCategoryName = $productArray[1];
+
+            $mainCategory = $categoryService->getByName($mainCategoryName);
+            if (!$mainCategory) {
+                $output->writeln('Main Category[' . $mainCategoryName . '] not found.');
+                die;
+            }
+
+            $categoryService->addCategory($subCategoryName, Category::CATEGORY_TYPE_FASHION, $mainCategory->getId());
         }
 
         $output->writeln('Done.');

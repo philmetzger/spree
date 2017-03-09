@@ -56,4 +56,24 @@ class CategoryService {
 
         return $entity;
     }
+
+    /**
+     * @param string $name
+     * @param int $type
+     * @param int $parentId
+     * @param null|string $description
+     */
+    public function addCategory($name, $type, $parentId, $description = null) {
+        $category = new Category();
+        $category->setName($name);
+        $category->setType($type);
+        $category->setParentId($parentId);
+        $category->setDescription($description);
+
+        $em = $this->doctrine->getManager();
+
+        $em->persist($category);
+
+        $em->flush();
+    }
 }
