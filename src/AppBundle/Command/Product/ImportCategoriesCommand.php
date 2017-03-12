@@ -44,8 +44,8 @@ class ImportCategoriesCommand extends ContainerAwareCommand {
 
         foreach ($csvFile as $line) {
             $productArray = explode(';', $line);
-            $mainCategoryName = $productArray[0];
-            $subCategoryName = $productArray[1];
+            $mainCategoryName = utf8_encode($productArray[0]);
+            $subCategoryName = utf8_encode($productArray[1]);
 
             $mainCategory = $categoryService->getByName($mainCategoryName);
             if (!$mainCategory) {

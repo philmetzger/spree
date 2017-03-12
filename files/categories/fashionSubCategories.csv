@@ -1,22 +1,22 @@
-Anzge;Anzughosen
-Anzge;Anzugsakkos
-Anzge;Anzugwesten
-Anzge;blazer
-Anzge;Einreiher Anzge
-Anzge;Fracks
-Anzge;hosenanzge
-Anzge;kostme
-Anzge;Nadelstreifenanzge
-Anzge;Sakkos
-Anzge;Schmale Anzge
-Anzge;Smokings
-Anzge;Zweireiher Anzge
-Bademode;Badeanzge
+Anzüge;Anzughosen
+Anzüge;Anzugsakkos
+Anzüge;Anzugwesten
+Anzüge;blazer
+Anzüge;Einreiher Anzüge
+Anzüge;Fracks
+Anzüge;hosenanzüge
+Anzüge;kostüme
+Anzüge;Nadelstreifenanzüge
+Anzüge;Sakkos
+Anzüge;Schmale Anzüge
+Anzüge;Smokings
+Anzüge;Zweireiher Anzüge
+Bademode;Badeanzüge
 Bademode;Badehosen
 Bademode;Badekleider
 Bademode;Badeschuhe
 Bademode;Badeshorts
-Bademode;Badetcher
+Bademode;Badetücher
 Bademode;bikini tops
 Bademode;Bikini-Hosen
 Bademode;Bikinis
@@ -30,7 +30,7 @@ Bademode;Pareo
 Bademode;Strandaccessoires
 Bademode;Strandbekleidung
 Bademode;Tankinis
-Blusen;rmellose Blusen
+Blusen;Ärmellose Blusen
 Blusen;Blusen mit Bubikragen
 Blusen;Blusenbodies
 Blusen;Carmenblusen
@@ -47,7 +47,7 @@ Blusen;Langarm Blusen
 Blusen;Leinenblusen
 Blusen;Longblusen
 Blusen;Oversize Blusen
-Blusen;Rschenblusen
+Blusen;Rüschenblusen
 Blusen;Satinblusen
 Blusen;Schluppenblusen
 Blusen;Seidenblusen
@@ -67,13 +67,13 @@ Hemden;Langarm Hemden
 Hemden;Smokinghemden
 Hemden;Sommerhemden
 Hemden;Trachtenhemden
-Homewear;Badem„ntel
-Homewear;Hausanzge
+Homewear;Bademäntel
+Homewear;Hausanzüge
 Homewear;Hauskleider
 Homewear;Haussocken
 Homewear;Homewear Hosen
 Homewear;Kimonos
-Homewear;Morgenm„ntel
+Homewear;Morgenmäntel
 Homewear;Nachthemden
 Homewear;Onesies
 Homewear;Pyjamas
@@ -82,7 +82,7 @@ Hosen;7/8-Hosen
 Hosen;Baggy Hosen
 Hosen;bermudas
 Hosen;Bootcut-Hosen & Schlaghosen
-Hosen;Bgelfaltenhosen
+Hosen;Bügelfaltenhosen
 Hosen;Bundfaltenhosen
 Hosen;Caprihosen
 Hosen;Cargohosen
@@ -95,7 +95,7 @@ Hosen;Gerade Hosen
 Hosen;Haremshosen
 Hosen;High Waist Hosen
 Hosen;hotpants
-Hosen;Hfthosen
+Hosen;Hüfthosen
 Hosen;jummpsuits
 Hosen;Karottenhosen
 Hosen;Komforthosen
@@ -107,7 +107,7 @@ Hosen;Leinenhosen
 Hosen;Outdoorhosen
 Hosen;Palazzohosen
 Hosen;Reiterhosen
-Hosen;R”hrenhosen
+Hosen;Röhrenhosen
 Hosen;shorts
 Hosen;Sommerhosen
 Hosen;Sporthosen
@@ -123,7 +123,7 @@ Jacken;Blousonjacken
 Jacken;Blousons
 Jacken;Boleros
 Jacken;Bomberjacken
-Jacken;Boucl‚ Jacken
+Jacken;Bouclé Jacken
 Jacken;Cabanjacken
 Jacken;Capes
 Jacken;Cargojacken
@@ -151,13 +151,13 @@ Jacken;Parka
 Jacken;Pelzjacken
 Jacken;Ponchos
 Jacken;Regenjacken
-Jacken;Sch”áchenjacken
+Jacken;Schößchenjacken
 Jacken;Softshelljacken
 Jacken;Sommerdaunenjacken
 Jacken;Sommerjacken
 Jacken;Steppjacken
 Jacken;Trainingsjacken
-Jacken;šbergangsjacken
+Jacken;Übergangsjacken
 Jacken;Wachsjacken
 Jacken;Wendejacken
 Jacken;Westen
@@ -180,7 +180,7 @@ Jeans;Cargo-Jeans
 Jeans;Destroyed Jeans
 Jeans;Gerade Jeans
 Jeans;High Waist Jeans
-Jeans;Hftjeans
+Jeans;Hüftjeans
 Jeans;Jeans Latzhosen
 Jeans;Jeans Shorts
 Jeans;Jeggings
@@ -192,7 +192,7 @@ Jeans;Marlene-Jeans
 Jeans;Push-up Jeans
 Jeans;Regular Fit Jeans
 Jeans;Relaxed fit
-Jeans;R”hrenjeans
+Jeans;Röhrenjeans
 Jeans;schlagjeans
 Jeans;Skinny Fit
 Jeans;Slim Fit
@@ -240,10 +240,10 @@ Kleider;One Shoulder Kleider
 Kleider;One Shoulder-Kleider
 Kleider;Partykleider
 Kleider;Petticoat Kleider
-Kleider;Pliss‚ekleider
+Kleider;Plisséekleider
 Kleider;Polokleider
-Kleider;Rckenfreie Kleider
-Kleider;Sch”áchenkleider
+Kleider;Rückenfreie Kleider
+Kleider;Schößchenkleider
 Kleider;Schulterfreie Kleider
 Kleider;Shirtkleider
 Kleider;Sommerkleider
@@ -251,34 +251,34 @@ Kleider;Spitzenkleider
 Kleider;Strandkleider
 Kleider;Strickkleider
 Kleider;Sweatkleider
-Kleider;Tr„gerkleider
+Kleider;Trägerkleider
 Kleider;Tunikakleider
 Kleider;Vokuhila Kleider
 Kleider;Volantkleider
 Kleider;Wickelkleider
 Kleider;Winterkleider
-M„ntel;Blazerm„ntel
-M„ntel;Daunenm„ntel
-M„ntel;Dufflecoats
-M„ntel;Egg Shape M„ntel
-M„ntel;Funktionsm„ntel
-M„ntel;Gehr”cke
-M„ntel;Kamelhaarm„ntel
-M„ntel;Kapuzenm„ntel
-M„ntel;kunstlederm„ntel
-M„ntel;Kurzm„ntel
-M„ntel;Langm„ntel
-M„ntel;Lederm„ntel
-M„ntel;M„ntel mit Grtel
-M„ntel;parkas
-M„ntel;Regenm„ntel
-M„ntel;Sommerm„ntel
-M„ntel;steppm„ntel
-M„ntel;Trenchcoats
-M„ntel;Wasserfall M„ntel
-M„ntel;Wendem„ntel
-M„ntel;Winterm„ntel
-M„ntel;Wollm„ntel
+Mäntel;Blazermäntel
+Mäntel;Daunenmäntel
+Mäntel;Dufflecoats
+Mäntel;Egg Shape Mäntel
+Mäntel;Funktionsmäntel
+Mäntel;Gehröcke
+Mäntel;Kamelhaarmäntel
+Mäntel;Kapuzenmäntel
+Mäntel;kunstledermäntel
+Mäntel;Kurzmäntel
+Mäntel;Langmäntel
+Mäntel;Ledermäntel
+Mäntel;Mäntel mit Gürtel
+Mäntel;parkas
+Mäntel;Regenmäntel
+Mäntel;Sommermäntel
+Mäntel;steppmäntel
+Mäntel;Trenchcoats
+Mäntel;Wasserfall Mäntel
+Mäntel;Wendemäntel
+Mäntel;Wintermäntel
+Mäntel;Wollmäntel
 Pullover;2-in-1 Pullover
 Pullover;3/4 Arm-Pullover
 Pullover;Cardigans
@@ -289,7 +289,7 @@ Pullover;Crop Pullover
 Pullover;Fleece Pullover
 Pullover;Fleecepullover
 Pullover;Grobstrickjacken
-Pullover;H„kelpullover
+Pullover;Häkelpullover
 Pullover;Hoodies
 Pullover;Kapuzenpullover
 Pullover;Kapuzenshirts
@@ -301,7 +301,7 @@ Pullover;Norwegerpullover
 Pullover;Oversize Pullover
 Pullover;Ponchos
 Pullover;Pullover
-Pullover;Pullover mit Fledermaus„rmeln
+Pullover;Pullover mit Fledermausärmeln
 Pullover;Pullunder
 Pullover;Rollkragenpullover
 Pullover;Rundhals Pullover
@@ -323,43 +323,43 @@ Pullover;V-Pullover
 Pullover;Wasserfallpullover
 Pullover;Wickeljacken
 Pullover;Wickelpullover
-R”cke;A-Linien R”cke
-R”cke;A-Linienr”cke
-R”cke;Asymmetrische R”cke
-R”cke;Ballonr”cke
-R”cke;Bleistiftr”cke
-R”cke;Cargor”cke
-R”cke;Faltenr”cke
-R”cke;Godetr”cke
-R”cke;Hosenr”cke
-R”cke;Jeans R”cke
-R”cke;Jeansr”cke
-R”cke;Jerseyr”cke
-R”cke;Karor”cke
-R”cke;Kurze R”cke
-R”cke;Lange R”cke
-R”cke;Lederimitatr”cke
-R”cke;Lederr”cke
-R”cke;Maxir”cke
-R”cke;Midir”cke
-R”cke;Minir”cke
-R”cke;Petticoats
-R”cke;Pliss‚er”cke
-R”cke;R”cke in A-Linie
-R”cke;R”cke mit Schlitz
-R”cke;Sommerr”cke
-R”cke;Sportr”cke
-R”cke;Strickr”cke
-R”cke;Stufenr”cke
-R”cke;Tellerr”cke
-R”cke;Tllr”cke
-R”cke;Unterr”cke
-R”cke;Vokuhila R”cke
-R”cke;Volantr”cke
-R”cke;Wickelr”cke
-R”cke;Winterr”cke
+Röcke;A-Linien Röcke
+Röcke;A-Linienröcke
+Röcke;Asymmetrische Röcke
+Röcke;Ballonröcke
+Röcke;Bleistiftröcke
+Röcke;Cargoröcke
+Röcke;Faltenröcke
+Röcke;Godetröcke
+Röcke;Hosenröcke
+Röcke;Jeans Röcke
+Röcke;Jeansröcke
+Röcke;Jerseyröcke
+Röcke;Karoröcke
+Röcke;Kurze Röcke
+Röcke;Lange Röcke
+Röcke;Lederimitatröcke
+Röcke;Lederröcke
+Röcke;Maxiröcke
+Röcke;Midiröcke
+Röcke;Miniröcke
+Röcke;Petticoats
+Röcke;Plisséeröcke
+Röcke;Röcke in A-Linie
+Röcke;Röcke mit Schlitz
+Röcke;Sommerröcke
+Röcke;Sportröcke
+Röcke;Strickröcke
+Röcke;Stufenröcke
+Röcke;Tellerröcke
+Röcke;Tüllröcke
+Röcke;Unterröcke
+Röcke;Vokuhila Röcke
+Röcke;Volantröcke
+Röcke;Wickelröcke
+Röcke;Winterröcke
 Shirts;2-in-1 Shirts
-Shirts;rmellose Shirts
+Shirts;Ärmellose Shirts
 Shirts;Babydolls
 Shirts;Ballonshirts
 Shirts;Baseball Shirts
@@ -388,42 +388,42 @@ Shirts;V-Shirts
 Shirts;Wasserfallshirts
 Shirts;Wickelshirts
 Shirts;Zipfelshirts
-Sportswear;Damen-Fuáballtrikots
+Sportswear;Damen-Fußballtrikots
 Sportswear;Fitness Shirts
 Sportswear;Fitnesshosen
-Sportswear;Fitnessğshirts
+Sportswear;Fitness­shirts
 Sportswear;Funktionspullover
 Sportswear;Funktionsshirts
 Sportswear;Funktionsshorts
 Sportswear;Funktionstops
-Sportswear;Fuáballğtrikots
-Sportswear;Gymnastikanzge
+Sportswear;Fußball­trikots
+Sportswear;Gymnastikanzüge
 Sportswear;Laufjacken
-Sportswear;Laufğshirts
+Sportswear;Lauf­shirts
 Sportswear;Lauftops
-Sportswear;Saunaanzge
+Sportswear;Saunaanzüge
 Sportswear;Skorts
 Sportswear;Softshell Jacken
-Sportswear;Softshellğjacken
+Sportswear;Softshell­jacken
 Sportswear;Sport BHs
 Sportswear;Sport Leggings
-Sportswear;Sportanzge
+Sportswear;Sportanzüge
 Sportswear;Sporthosen
 Sportswear;Sportjacken
-Sportswear;Sportğkleider
-Sportswear;Sportkleider fr Damen
-Sportswear;Sportr”cke
+Sportswear;Sport­kleider
+Sportswear;Sportkleider für Damen
+Sportswear;Sportröcke
 Sportswear;Sport-Shirts
 Sportswear;Sportshorts
 Sportswear;Sporttops
 Sportswear;sweathosen
 Sportswear;Tights
-Sportswear;trainingsanzge
+Sportswear;trainingsanzüge
 Sportswear;Trainingsjacken
 Sportswear;Trainingsshirt
-Sportswear;Trainingsğshirts
+Sportswear;Trainings­shirts
 Sportswear;trikots
-Sportswear;Turnanzge
+Sportswear;Turnanzüge
 Tops;2-in-1-Tops
 Tops;Babydolls
 Tops;Bandeau Tops
@@ -438,14 +438,14 @@ Tops;Neckholdertops
 Tops;One Shoulder Tops
 Tops;One Shoulder-Tops
 Tops;Rollkragentops
-Tops;Rckenfreie Tops
-Tops;Rschentops
-Tops;Sch”áchen Tops
+Tops;Rückenfreie Tops
+Tops;Rüschentops
+Tops;Schößchen Tops
 Tops;Schulterfreie Tops
 Tops;Seidentops
 Tops;Sommertops
 Tops;Spaghettitops
-Tops;Spaghettitr„ger Tops
+Tops;Spaghettiträger Tops
 Tops;Spitzentops
 Tops;Sport Tops
 Tops;Stricktops
@@ -457,63 +457,63 @@ Trachtenmode;Dirndl
 Trachtenmode;Dirndlblusen
 Trachtenmode;Janker
 Trachtenmode;Trachtenhemden
-Trachtenmode;Trachtenhte
+Trachtenmode;Trachtenhüte
 Trachtenmode;Trachtenlederhosen
 Trachtenmode;Trachtenmieder
 Trachtenmode;Trachtensocken
 Trachtenmode;Trachtenwesten
-Trachtenmode;Trachtenzubeh”r
-Umstandsmode/Schwangerschaftsmode;Basics
-Umstandsmode/Schwangerschaftsmode;Bauchb„nder
-Umstandsmode/Schwangerschaftsmode;Stilloberteile
-Umstandsmode/Schwangerschaftsmode;Umstandsblusen
-Umstandsmode/Schwangerschaftsmode;Umstandshosen
-Umstandsmode/Schwangerschaftsmode;Umstandsjacken
-Umstandsmode/Schwangerschaftsmode;Umstandsjeans
-Umstandsmode/Schwangerschaftsmode;Umstandskleider
-Umstandsmode/Schwangerschaftsmode;Umstandsleggings
-Umstandsmode/Schwangerschaftsmode;Umstandspullover
-Umstandsmode/Schwangerschaftsmode;Umstandsr”cke
-Umstandsmode/Schwangerschaftsmode;Umstands-Sets
-Umstandsmode/Schwangerschaftsmode;Umstandsshirts
-Umstandsmode/Schwangerschaftsmode;Umstandsstrickjacken
-Umstandsmode/Schwangerschaftsmode;Umstandstuniken
-W„sche;Balconette BH
-W„sche;BH
-W„sche;BHs
-W„sche;Bodies
-W„sche;Bodys
-W„sche;Boxershorts
-W„sche;Bgel BH
-W„sche;Dessous
-W„sche;Funktions-BHs
-W„sche;Hipster
-W„sche;Kniestrmpfe
-W„sche;korsagen
-W„sche;Lange Unterhosen
-W„sche;Oberteile
-W„sche;Overkneestrmpfe
-W„sche;Panties
-W„sche;Pants
-W„sche;Push-ups
-W„sche;Retro Pants
-W„sche;Schlpfer
-W„sche;Shapewear
-W„sche;Shaping-W„sche
-W„sche;Shirts
-W„sche;Slips
-W„sche;Socken
-W„sche;Sport-BHs
-W„sche;Sportsocken
-W„sche;Strings
-W„sche;Strmpfe
-W„sche;Strumpfhalter
-W„sche;strumpfhosen
-W„sche;Tr„gerlose BHs
-W„sche;Triangel BH
-W„sche;T-Shirt-BHs
-W„sche;Unterhemden
-W„sche;Unterhose
-W„sche;Unterhosen
-W„sche;Unterteile
-W„sche;variable BHs
+Trachtenmode;Trachtenzubehör
+Umstandsmode;Basics
+Umstandsmode;Stilloberteile
+Umstandsmode;Bauchbänder
+Umstandsmode;Umstandsblusen
+Umstandsmode;Umstandshosen
+Umstandsmode;Umstandsjacken
+Umstandsmode;Umstandsjeans
+Umstandsmode;Umstandskleider
+Umstandsmode;Umstandsleggings
+Umstandsmode;Umstandspullover
+Umstandsmode;Umstandsröcke
+Umstandsmode;Umstands-Sets
+Umstandsmode;Umstandsshirts
+Umstandsmode;Umstandsstrickjacken
+Umstandsmode;Umstandstuniken
+Wäsche;Balconette BH
+Wäsche;BH
+Wäsche;BHs
+Wäsche;Bodies
+Wäsche;Bodys
+Wäsche;Boxershorts
+Wäsche;Bügel BH
+Wäsche;Dessous
+Wäsche;Funktions-BHs
+Wäsche;Hipster
+Wäsche;Kniestrümpfe
+Wäsche;korsagen
+Wäsche;Lange Unterhosen
+Wäsche;Oberteile
+Wäsche;Overkneestrümpfe
+Wäsche;Panties
+Wäsche;Pants
+Wäsche;Push-ups
+Wäsche;Retro Pants
+Wäsche;Schlüpfer
+Wäsche;Shapewear
+Wäsche;Shaping-Wäsche
+Wäsche;Shirts
+Wäsche;Slips
+Wäsche;Socken
+Wäsche;Sport-BHs
+Wäsche;Sportsocken
+Wäsche;Strings
+Wäsche;Strümpfe
+Wäsche;Strumpfhalter
+Wäsche;strumpfhosen
+Wäsche;Trägerlose BHs
+Wäsche;Triangel BH
+Wäsche;T-Shirt-BHs
+Wäsche;Unterhemden
+Wäsche;Unterhose
+Wäsche;Unterhosen
+Wäsche;Unterteile
+Wäsche;variable BHs
