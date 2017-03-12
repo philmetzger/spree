@@ -1,7 +1,7 @@
 <?php
 namespace AppBundle\Command\Product;
 
-use Symfony\Component\Console\Command\Command;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Class Import
  */
-class ImportProductsCommand extends Command {
+class ImportProductsCommand extends ContainerAwareCommand {
 
     /**
      * @return void
@@ -37,9 +37,21 @@ class ImportProductsCommand extends Command {
             return;
         }
 
+        /* @var \AppBundle\Service\ProductService $productService */
+        $productService = $this->getContainer()->get('app.product');
+
         foreach ($csvFile as $line) {
             $productArray = explode(';', $line);
-            var_dump($productArray);die;
+            $mainCategoryName = utf8_encode($productArray[0]);
+            $subCategoryName = utf8_encode($productArray[1]);
+
+//            $mainCategory = $productService->getByName($mainCategoryName);
+//            if (!$mainCategory) {
+//                $output->writeln('Main Category[' . $mainCategoryName . '] not found.');
+//                die;
+//            }
+
+//            $categoryService->addCategory($subCategoryName, Category::CATEGORY_TYPE_FASHION, $mainCategory->getId());
         }
 
         $output->writeln('Done.');
