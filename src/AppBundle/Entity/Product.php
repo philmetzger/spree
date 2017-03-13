@@ -31,16 +31,22 @@ class Product {
     private $name;
 
     /**
-     * @ORM\Column(type="string")
-     * @param string $url
+     * @ORM\Column(name="source_url", type="string")
+     * @param string $sourceUrl
      */
-    private $url;
+    private $sourceUrl;
 
     /**
-     * @ORM\Column(type="array")
-     * @param array $images
+     * @ORM\Column(name="image_url_primary", type="string")
+     * @param string $imageUrlPrimary
      */
-    private $images;
+    private $imageUrlPrimary;
+
+    /**
+     * @ORM\Column(name="image_url_secondary", type="string")
+     * @param string $imageUrlSecondary
+     */
+    private $imageUrlSecondary;
 
     /**
      * @ORM\Column(type="float")
@@ -49,31 +55,31 @@ class Product {
     private $price;
 
     /**
-     * @ORM\Column(name="main_category", type="integer")
-     * @param int $mainCategory
+     * @ORM\Column(name="main_category_id", type="integer")
+     * @param int $mainCategoryId
      */
-    private $mainCategory;
+    private $mainCategoryId;
 
     /**
-     * @ORM\Column(name="sub_category", type="integer")
-     * @param int $subCategory
+     * @ORM\Column(name="sub_category_id", type="integer")
+     * @param int $subCategoryId
      */
-    private $subCategory;
+    private $subCategoryId;
 
     /**
-     * @ORM\Column(type="string", length=256)
+     * @ORM\Column(type="string", length=100)
      * @param string $color
      */
     private $color;
 
     /**
-     * @ORM\Column(type="string", length=256)
+     * @ORM\Column(type="string", length=50)
      * @param string $size
      */
     private $size;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=50)
      * @param string $gender
      */
     private $gender;
@@ -85,10 +91,16 @@ class Product {
     private $brand;
 
     /**
-     * @ORM\Column(type="string", length=256)
-     * @param string $story
+     * @ORM\Column(type="datetime")
+     * @param \DateTime $createdAt
      */
-    private $store;
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @param \DateTime $updatedAt
+     */
+    private $updatedAt;
 
     /**
      * @return int
@@ -121,29 +133,43 @@ class Product {
     /**
      * @return string
      */
-    public function getUrl() {
-        return $this->url;
+    public function getSourceUrl() {
+        return $this->sourceUrl;
     }
 
     /**
-     * @param string $url
+     * @param string $sourceUrl
      */
-    public function setUrl($url) {
-        $this->url = $url;
+    public function setSourceUrl($sourceUrl) {
+        $this->sourceUrl = $sourceUrl;
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getImages() {
-        return $this->images;
+    public function getImageUrlPrimary() {
+        return $this->imageUrlPrimary;
     }
 
     /**
-     * @param array $images
+     * @param string $imageUrl
      */
-    public function setImages($images) {
-        $this->images = $images;
+    public function setImageUrlPrimary($imageUrl) {
+        $this->imageUrlPrimary = $imageUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlSecondary() {
+        return $this->imageUrlSecondary;
+    }
+
+    /**
+     * @param string $imageUrl
+     */
+    public function setImageUrlSecondary($imageUrl) {
+        $this->imageUrlSecondary = $imageUrl;
     }
 
     /**
@@ -163,29 +189,29 @@ class Product {
     /**
      * @return int
      */
-    public function getMainCategory() {
-        return $this->mainCategory;
+    public function getMainCategoryId() {
+        return $this->mainCategoryId;
     }
 
     /**
-     * @param int $mainCategory
+     * @param int $mainCategoryId
      */
-    public function setMainCategory($mainCategory) {
-        $this->mainCategory = $mainCategory;
+    public function setMainCategory($mainCategoryId) {
+        $this->mainCategoryId = $mainCategoryId;
     }
 
     /**
      * @return int
      */
-    public function getSubCategory() {
-        return $this->subCategory;
+    public function getSubCategoryId() {
+        return $this->subCategoryId;
     }
 
     /**
-     * @param int $subCategory
+     * @param int $subCategoryId
      */
-    public function setSubCategory($subCategory) {
-        $this->subCategory = $subCategory;
+    public function setSubCategory($subCategoryId) {
+        $this->subCategoryId = $subCategoryId;
     }
 
     /**
@@ -245,16 +271,30 @@ class Product {
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
-    public function getStore() {
-        return $this->store;
+    public function getCreatedAt() {
+        return $this->createdAt;
     }
 
     /**
-     * @param string $store
+     * @param \DateTime $createdAt
      */
-    public function setStore($store) {
-        $this->store = $store;
+    public function setCreatedAt($createdAt) {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt() {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt) {
+        $this->updatedAt = $updatedAt;
     }
 }
