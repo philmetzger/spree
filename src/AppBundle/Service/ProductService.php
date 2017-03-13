@@ -40,20 +40,38 @@ class ProductService {
 
     /**
      * @param string $name
-     * @param string $url
-     * @param string[] $images
+     * @param string $description
+     * @param string $sourceUrl
+     * @param string $imagePrimary
+     * @param string $imageSecondary
      * @param float $price
-     * @param int $mainCategory
-     * @param int $subCategory
+     * @param int $mainCategoryId
+     * @param string $mainCategory
+     * @param int $subCategoryId
+     * @param string $subCategory
      * @param string $color
      * @param string $size
      * @param string $gender
      * @param string $brand
-     * @param string $store
      */
-    public function addProduct($name, $url, $images, $price, $mainCategory, $subCategory,
-                               $color, $size, $gender, $brand, $store) {
+    public function addProduct($name, $description, $sourceUrl, $imagePrimary, $imageSecondary, $price,
+                               $mainCategoryId, $mainCategory, $subCategoryId, $subCategory, $color, $size, $gender, $brand) {
         $product = new Product();
+
+        $product->setName($name);
+        $product->setDescription($description);
+        $product->setSourceUrl($sourceUrl);
+        $product->setImageUrlPrimary($imagePrimary);
+        $product->setImageUrlSecondary($imageSecondary);
+        $product->setPrice($price);
+        $product->setMainCategoryId($mainCategoryId);
+        $product->setMainCategory($mainCategory);
+        $product->setSubCategoryId($subCategoryId);
+        $product->setSubCategory($subCategory);
+        $product->setColor($color);
+        $product->setSize($size);
+        $product->setGender($gender);
+        $product->setBrand($brand);
 
         $em = $this->doctrine->getManager();
 

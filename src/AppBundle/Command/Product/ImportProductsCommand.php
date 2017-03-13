@@ -57,7 +57,6 @@ class ImportProductsCommand extends ContainerAwareCommand {
             $productSize = utf8_encode($productArray[8]);
             $productGender = utf8_encode($productArray[9]);
             $productBrand = utf8_encode($productArray[10]);
-            $productStore = utf8_encode($productArray[11]);
 
             $mainCategory = $categoryService->getByName($productMainCategory);
             if (!$mainCategory) {
@@ -73,16 +72,19 @@ class ImportProductsCommand extends ContainerAwareCommand {
 
             $productService->addProduct(
                 $productName,
+                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
                 $productUrl,
-                [$productImage0, $productImage1],
+                $productImage0,
+                $productImage1,
                 $productPrice,
-                $productMainCategory,
-                $productSubCategory,
+                $mainCategory->getId(),
+                $mainCategory->getName(),
+                $subCategory->getId(),
+                $subCategory->getName(),
                 $productColor,
                 $productSize,
                 $productGender,
-                $productBrand,
-                $productStore
+                $productBrand
             );
         }
 

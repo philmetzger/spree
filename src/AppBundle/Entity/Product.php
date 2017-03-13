@@ -11,6 +11,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Product {
 
     /**
+     * Product constructor.
+     */
+    public function __construct() {
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+    }
+
+    /**
      * @ORM\Column(type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -29,6 +37,12 @@ class Product {
      * )
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="text")
+     * @param string $description
+     */
+    private $description;
 
     /**
      * @ORM\Column(name="source_url", type="string")
@@ -61,10 +75,22 @@ class Product {
     private $mainCategoryId;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @param string $mainCategory
+     */
+    private $mainCategory;
+
+    /**
      * @ORM\Column(name="sub_category_id", type="integer")
      * @param int $subCategoryId
      */
     private $subCategoryId;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @param string $subCategory
+     */
+    private $subCategory;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -114,6 +140,20 @@ class Product {
      */
     public function setId($id) {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description) {
+        $this->description = $description;
     }
 
     /**
@@ -196,7 +236,7 @@ class Product {
     /**
      * @param int $mainCategoryId
      */
-    public function setMainCategory($mainCategoryId) {
+    public function setMainCategoryId($mainCategoryId) {
         $this->mainCategoryId = $mainCategoryId;
     }
 
@@ -210,8 +250,36 @@ class Product {
     /**
      * @param int $subCategoryId
      */
-    public function setSubCategory($subCategoryId) {
+    public function setSubCategoryId($subCategoryId) {
         $this->subCategoryId = $subCategoryId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMainCategory() {
+        return $this->mainCategory;
+    }
+
+    /**
+     * @param string $mainCategory
+     */
+    public function setMainCategory($mainCategory) {
+        $this->mainCategory = $mainCategory;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubCategory() {
+        return $this->subCategory;
+    }
+
+    /**
+     * @param string $subCategory
+     */
+    public function setSubCategory($subCategory) {
+        $this->subCategory = $subCategory;
     }
 
     /**
