@@ -12,6 +12,7 @@ CREATE TABLE postgres.products
   brand character varying(255),
   color character varying(100),
   gender character varying(50),
+  size character varying(50),
   category_id bigserial,
   created_at timestamp without time zone NOT NULL DEFAULT now(),
   last_updated timestamp without time zone NOT NULL DEFAULT now(),
