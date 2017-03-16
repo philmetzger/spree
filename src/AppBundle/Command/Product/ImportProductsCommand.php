@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Command\Product;
 
+use AppBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -43,39 +44,47 @@ class ImportProductsCommand extends ContainerAwareCommand {
         /* @var \AppBundle\Service\CategoryService $categoryService */
         $categoryService = $this->getContainer()->get('app.category');
 
+        $found = 0;
+        $notFound = 0;
         foreach ($csvFile as $line) {
             $productArray = explode(';', $line);
 
-            $productName = utf8_encode($productArray[0]);
-            $productUrl = utf8_encode($productArray[1]);
-            $productImage0 = utf8_encode($productArray[2]);
-            $productImage1 = utf8_encode($productArray[3]);
+            $category = utf8_encode($productArray[1]);
+            $productName = utf8_encode($productArray[2]);
+            $productDescription = utf8_encode($productArray[3]);
             $productPrice = utf8_encode($productArray[4]);
-            $productMainCategory = utf8_encode($productArray[5]);
-            $productSubCategory = utf8_encode($productArray[6]);
-            $productColor = utf8_encode($productArray[7]);
-            $productSize = utf8_encode($productArray[8]);
-            $productGender = utf8_encode($productArray[9]);
-            $productBrand = utf8_encode($productArray[10]);
+            $productImage = utf8_encode($productArray[5]);
+            $productUrl = utf8_encode($productArray[6]);
+            $productSize = utf8_encode($productArray[9]);
+            $productColor = utf8_encode($productArray[10]);
+            $productGender = utf8_encode($productArray[12]);
+            $productBrand = utf8_encode($productArray[11]);
 
-            $mainCategory = $categoryService->getByName($productMainCategory);
-            if (!$mainCategory) {
-                $output->writeln('Main Category[' . $productMainCategory . '] not found.');
+            $categoriesArray = explode(" > ", $category);
+
+            $mainCategory = $categoryService->getByName($categoriesArray[0]);
+            if (is_null($mainCategory)) {
+                $output->writeln('Main Category[' . $categoriesArray[0] . '] not found.');
                 die;
             }
 
-            $subCategory = $categoryService->getByName($productSubCategory);
+            $subCategory = $categoryService->getBySimilarName($categoriesArray[1]);
             if (!$subCategory) {
-                $output->writeln('Main Category[' . $productSubCategory . '] not found.');
-                die;
+                if (isset($categoriesArray[2])) {
+                    $subCategory = $categoryService->getBySimilarName($categoriesArray[2]);
+                }
+                if (!$subCategory) {
+                    $output->writeln('Sub Category[' . $categoriesArray[1] . '] not found.');
+                    continue;
+                }
             }
 
             $productService->addProduct(
                 $productName,
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries',
+                $productDescription,
                 $productUrl,
-                $productImage0,
-                $productImage1,
+                $productImage,
+                '',
                 $productPrice,
                 $mainCategory->getId(),
                 $mainCategory->getName(),
@@ -87,6 +96,8 @@ class ImportProductsCommand extends ContainerAwareCommand {
                 $productBrand
             );
         }
+
+        var_dump($found, $notFound);die;
 
         $output->writeln('Done.');
     }

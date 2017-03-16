@@ -58,6 +58,26 @@ class CategoryService {
     }
 
     /**
+     * @deprecated Name is not indexed yet.
+     *
+     * @param string $categoryName
+     * @return null|Category
+     */
+    public function getBySimilarName($categoryName) {
+        $qb = $this->doctrine
+            ->getEntityManager()
+            ->createQueryBuilder();
+
+        $result = $qb->select('c')->from('AppBundle:Category', 'c')->where("lower(c.name) = lower(:name)")->setParameter('name', $categoryName);
+        var_dump($result->getQuery()->execute());die;
+        if (!$entity) {
+            return null;
+        }
+
+        return $entity;
+    }
+
+    /**
      * @param string $name
      * @param int $type
      * @param int $parentId

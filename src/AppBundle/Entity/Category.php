@@ -11,8 +11,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Category {
 
     const CATEGORY_TYPE_FASHION = 1;
-    const CATEGORY_TYPE_ACCESSORY = 2;
-    const CATEGORY_TYPE_SHOE = 3;
+    const CATEGORY_TYPE_ACCESSORIES = 2;
+    const CATEGORY_TYPE_SHOES = 3;
 
     /**
      * @ORM\Column(type="integer", nullable=false)

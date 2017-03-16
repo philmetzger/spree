@@ -52,7 +52,7 @@ class ImportCategoriesCommand extends ContainerAwareCommand {
                 die;
             }
 
-            $categoryService->addCategory($subCategoryName, Category::CATEGORY_TYPE_FASHION, $mainCategory->getId());
+            $categoryService->addCategory(trim($subCategoryName), Category::CATEGORY_TYPE_FASHION, $mainCategory->getId());
         }
 
         $output->writeln('Done.');
