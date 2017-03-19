@@ -1,0 +1,33 @@
+<div class="product-filter">
+    <div class="filter-option categories">
+        <h3 class="ui header">Categories</h3>
+        <div class="menu">
+            {% for key,value in mainCategories %}
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="{{ key }}">
+                        <label>{{ value }}</label>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="ui section divider"></div>
+    </div>
+
+    <div class="filter-option categories">
+        <h3 class="ui header">
+            Colors
+        </h3>
+        <div class="menu">
+            {% for key,value in colors %}
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="{{ value }}">
+                        <label>{{ value }}</label>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="ui section divider"></div>
+    </div>
+</div>

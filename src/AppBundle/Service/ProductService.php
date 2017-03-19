@@ -22,6 +22,30 @@ class ProductService {
     }
 
     /**
+     * @return array
+     */
+    public function getProductColors() {
+        $qb = $this->doctrine
+            ->getEntityManager()
+            ->createQueryBuilder();
+
+        $result = $qb->select('distinct p.color')
+            ->from('AppBundle:Product', 'p');
+
+        $result = $result->getQuery()->execute();
+        if (!$result) {
+            return [];
+        }
+
+        $colors = [];
+        foreach ($result as $colorResult) {
+            $colors[] = $colorResult['color'];
+        }
+
+        return $colors;
+    }
+
+    /**
      * @param int $productId
      * @return null|Product
      */

@@ -39,6 +39,22 @@ class CategoryService {
     }
 
     /**
+     * @return null|Category[]
+     */
+    public function getMainCategories() {
+        $entities = $this->doctrine
+            ->getRepository('AppBundle:Category')
+            ->findBy([
+                'parentId' => 0
+            ]);
+        if (!$entities) {
+            return null;
+        }
+
+        return $entities;
+    }
+
+    /**
      * @deprecated Name is not indexed yet.
      *
      * @param string $categoryName
