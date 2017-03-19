@@ -1,160 +1,83 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/home.css') }}" />
+{% endblock %}
+
 {% block body %}
-    <div class="ui container container-home">
-        <div class="ui grid container">
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
+    <div class="container-home">
+        <div class="breadcrumbs"></div>
+        <div class="product-list-container">
+            <div class="product-filter">
+
+            </div>
+
+            <div class="product-list">
+                <div class="ui grid container">
+                    <div class="three wide column">
+                        <div class="ui fluid card">
+                            <a class="image" href="#">
+                                <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
+                            </a>
+                            <div class="content">
+                                <a class="header" href="#">Steve Jobes</a>
+                                <div class="meta">
+                                    <a>Last Seen 2 days ago</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
+                    <div class="three wide column">
+                        <div class="ui fluid card">
+                            <a class="image" href="#">
+                                <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
+                            </a>
+                            <div class="content">
+                                <a class="header" href="#">Steve Jobes</a>
+                                <div class="meta">
+                                    <a>Last Seen 2 days ago</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
+                    <div class="three wide column">
+                        <div class="ui fluid card">
+                            <a class="image" href="#">
+                                <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
+                            </a>
+                            <div class="content">
+                                <a class="header" href="#">Steve Jobes</a>
+                                <div class="meta">
+                                    <a>Last Seen 2 days ago</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
+                    <div class="three wide column">
+                        <div class="ui fluid card">
+                            <a class="image" href="#">
+                                <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
+                            </a>
+                            <div class="content">
+                                <a class="header" href="#">Steve Jobes</a>
+                                <div class="meta">
+                                    <a>Last Seen 2 days ago</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four wide column">
-                <div class="ui card">
-                    <a class="image" href="#">
-                        <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="#">Steve Jobes</a>
-                        <div class="meta">
-                            <a>Last Seen 2 days ago</a>
+                    <div class="three wide column">
+                        <div class="ui fluid card">
+                            <a class="image" href="#">
+                                <img src="{{ asset('bundles/app/image/profiledefault.png') }}">
+                            </a>
+                            <div class="content">
+                                <a class="header" href="#">Steve Jobes</a>
+                                <div class="meta">
+                                    <a>Last Seen 2 days ago</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
