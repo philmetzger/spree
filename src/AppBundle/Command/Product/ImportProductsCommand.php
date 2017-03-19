@@ -2,6 +2,7 @@
 namespace AppBundle\Command\Product;
 
 use AppBundle\Entity\Category;
+use NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -30,6 +31,8 @@ class ImportProductsCommand extends ContainerAwareCommand {
     protected function execute(InputInterface $input, OutputInterface $output) {
         $output->writeln('Starting.');
 
+        ini_set('memory_limit', '1G');
+
         try {
             $csvFile = file($input->getArgument('file'));
             $output->writeln('Processing file[' . $input->getArgument('file') . ']...');
@@ -47,37 +50,44 @@ class ImportProductsCommand extends ContainerAwareCommand {
         $found = 0;
         $notFound = 0;
         foreach ($csvFile as $line) {
+            $output->writeln('Processing: ' . $line);
+
             $productArray = explode(';', $line);
 
-            $category = utf8_encode($productArray[1]);
-            $productName = utf8_encode($productArray[2]);
-            $productDescription = utf8_encode($productArray[3]);
-            $productPrice = utf8_encode($productArray[4]);
-            $productImage = utf8_encode($productArray[5]);
-            $productUrl = utf8_encode($productArray[6]);
-            $productSize = utf8_encode($productArray[9]);
-            $productColor = utf8_encode($productArray[10]);
-            $productGender = utf8_encode($productArray[12]);
-            $productBrand = utf8_encode($productArray[11]);
+            try {
+                $category = utf8_encode($productArray[1]);
+                $productName = utf8_encode($productArray[2]);
+                $productDescription = utf8_encode($productArray[3]);
+                $productPrice = utf8_encode($productArray[4]);
+                $productImage = utf8_encode($productArray[5]);
+                $productUrl = utf8_encode($productArray[6]);
+                $productSize = utf8_encode($productArray[9]);
+                $productColor = utf8_encode($productArray[10]);
+                $productGender = utf8_encode($productArray[12]);
+                $productBrand = utf8_encode($productArray[11]);
+            } catch (\Exception $e) {
+                $notFound++;
+                continue;
+            }
+
+            $parentId = 0;
 
             $categoriesArray = explode(" > ", $category);
+            foreach ($categoriesArray as $arrayCategory) {
+                $category = $categoryService->getByName($arrayCategory);
+                if (is_null($category)) {
+                    $category = $this->createCategory($arrayCategory, $parentId);
+                    $output->writeln('Created Category[' . $category->getName() . '].');
+                }
 
-            $mainCategory = $categoryService->getByName($categoriesArray[0]);
-            if (is_null($mainCategory)) {
-                $output->writeln('Main Category[' . $categoriesArray[0] . '] not found.');
-                die;
+                if (is_null($category)) {
+                    var_dump($arrayCategory);die;
+                }
+
+                $parentId = $category->getId();
             }
 
-            $subCategory = $categoryService->getBySimilarName($categoriesArray[1]);
-            if (!$subCategory) {
-                if (isset($categoriesArray[2])) {
-                    $subCategory = $categoryService->getBySimilarName($categoriesArray[2]);
-                }
-                if (!$subCategory) {
-                    $output->writeln('Sub Category[' . $categoriesArray[1] . '] not found.');
-                    continue;
-                }
-            }
+            $productPrice = floatval(str_replace(',', '.', str_replace('.', '', $productPrice)));
 
             $productService->addProduct(
                 $productName,
@@ -86,19 +96,33 @@ class ImportProductsCommand extends ContainerAwareCommand {
                 $productImage,
                 '',
                 $productPrice,
-                $mainCategory->getId(),
-                $mainCategory->getName(),
-                $subCategory->getId(),
-                $subCategory->getName(),
+                $category->getId(),
+                $category->getName(),
                 $productColor,
                 $productSize,
                 $productGender,
                 $productBrand
             );
+
+            $found++;
+            gc_collect_cycles();
         }
 
-        var_dump($found, $notFound);die;
+        $output->writeln('Done. Found = ' . $found . '. Not found = ' . $notFound . '.');
+    }
 
-        $output->writeln('Done.');
+    /**
+     * @param string $arrayCategory
+     * @param int $parentId
+     *
+     * @return Category
+     */
+    private function createCategory($arrayCategory, $parentId = 0) {
+        /* @var \AppBundle\Service\CategoryService $categoryService */
+        $categoryService = $this->getContainer()->get('app.category');
+
+        $categoryService->addCategory(trim($arrayCategory), null, $parentId);
+
+        return $categoryService->getByName(trim($arrayCategory));
     }
 }

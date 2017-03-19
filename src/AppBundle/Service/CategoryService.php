@@ -68,13 +68,12 @@ class CategoryService {
             ->getEntityManager()
             ->createQueryBuilder();
 
-        $result = $qb->select('c')->from('AppBundle:Category', 'c')->where("lower(c.name) = lower(:name)")->setParameter('name', $categoryName);
-        var_dump($result->getQuery()->execute());die;
-        if (!$entity) {
-            return null;
-        }
+        $result = $qb->select('c')
+            ->from('AppBundle:Category', 'c')
+            ->where("lower(c.name) = lower(:name)")
+            ->setParameter('name', $categoryName);
 
-        return $entity;
+        return $result->getQuery()->execute();
     }
 
     /**

@@ -69,28 +69,16 @@ class Product {
     private $price;
 
     /**
-     * @ORM\Column(name="main_category_id", type="integer")
-     * @param int $mainCategoryId
+     * @ORM\Column(name="category_id", type="integer")
+     * @param int $categoryId
      */
-    private $mainCategoryId;
+    private $categoryId;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @param string $mainCategory
+     * @param string $category
      */
-    private $mainCategory;
-
-    /**
-     * @ORM\Column(name="sub_category_id", type="integer")
-     * @param int $subCategoryId
-     */
-    private $subCategoryId;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @param string $subCategory
-     */
-    private $subCategory;
+    private $category;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -229,57 +217,29 @@ class Product {
     /**
      * @return int
      */
-    public function getMainCategoryId() {
-        return $this->mainCategoryId;
+    public function getCategoryId() {
+        return $this->categoryId;
     }
 
     /**
-     * @param int $mainCategoryId
+     * @param int $categoryId
      */
-    public function setMainCategoryId($mainCategoryId) {
-        $this->mainCategoryId = $mainCategoryId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSubCategoryId() {
-        return $this->subCategoryId;
-    }
-
-    /**
-     * @param int $subCategoryId
-     */
-    public function setSubCategoryId($subCategoryId) {
-        $this->subCategoryId = $subCategoryId;
+    public function setCategoryId($categoryId) {
+        $this->categoryId = $categoryId;
     }
 
     /**
      * @return string
      */
-    public function getMainCategory() {
-        return $this->mainCategory;
+    public function getCategory() {
+        return $this->category;
     }
 
     /**
-     * @param string $mainCategory
+     * @param string $category
      */
-    public function setMainCategory($mainCategory) {
-        $this->mainCategory = $mainCategory;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSubCategory() {
-        return $this->subCategory;
-    }
-
-    /**
-     * @param string $subCategory
-     */
-    public function setSubCategory($subCategory) {
-        $this->subCategory = $subCategory;
+    public function setCategory($category) {
+        $this->category = $category;
     }
 
     /**

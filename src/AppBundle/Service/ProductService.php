@@ -45,17 +45,15 @@ class ProductService {
      * @param string $imagePrimary
      * @param string $imageSecondary
      * @param float $price
-     * @param int $mainCategoryId
-     * @param string $mainCategory
-     * @param int $subCategoryId
-     * @param string $subCategory
+     * @param int $categoryId
+     * @param string $category
      * @param string $color
      * @param string $size
      * @param string $gender
      * @param string $brand
      */
     public function addProduct($name, $description, $sourceUrl, $imagePrimary, $imageSecondary, $price,
-                               $mainCategoryId, $mainCategory, $subCategoryId, $subCategory, $color, $size, $gender, $brand) {
+                               $categoryId, $category, $color, $size, $gender, $brand) {
         $product = new Product();
 
         $product->setName($name);
@@ -64,10 +62,8 @@ class ProductService {
         $product->setImageUrlPrimary($imagePrimary);
         $product->setImageUrlSecondary($imageSecondary);
         $product->setPrice($price);
-        $product->setMainCategoryId($mainCategoryId);
-        $product->setMainCategory($mainCategory);
-        $product->setSubCategoryId($subCategoryId);
-        $product->setSubCategory($subCategory);
+        $product->setCategoryId($categoryId);
+        $product->setCategory($category);
         $product->setColor($color);
         $product->setSize($size);
         $product->setGender($gender);
@@ -78,5 +74,7 @@ class ProductService {
         $em->persist($product);
 
         $em->flush();
+
+        $em->clear();
     }
 }
