@@ -1,5 +1,24 @@
 <div class="product-filter">
     <div class="filter-option categories">
+        <h3 class="ui header">Gender</h3>
+        <div class="menu">
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" name="Women">
+                    <label>Women</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" name="Men">
+                    <label>Men</label>
+                </div>
+            </div>
+        </div>
+        <div class="ui section divider"></div>
+    </div>
+
+    <div class="filter-option categories">
         <h3 class="ui header">Categories</h3>
         <div class="menu">
             {% for key,value in mainCategories %}
@@ -10,6 +29,22 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+        <div class="ui section divider"></div>
+    </div>
+
+    <div class="filter-option price">
+        <h3 class="ui header">Price</h3>
+        <div class="ui tiny form">
+            <div class="two fields">
+                <div class="field">
+                    <input placeholder="Min" type="text" name="pmin">
+                </div>
+                <span class="dash">&mdash;</span>
+                <div class="field">
+                    <input placeholder="Max" type="text" name="pmax">
+                </div>
+            </div>
         </div>
         <div class="ui section divider"></div>
     </div>
@@ -28,6 +63,5 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="ui section divider"></div>
     </div>
 </div>

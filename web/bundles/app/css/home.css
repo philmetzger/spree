@@ -30,6 +30,10 @@
     box-shadow: 0 1px 3px 0 #D4D4D5, 0 0 0 1px #D4D4D5;
 }
 
+.product-filter .price .dash {
+    margin-top: 5px;
+}
+
 .product-list-container .product-list {
     padding: 0 10px;
     -webkit-box-flex: 1;
