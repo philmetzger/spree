@@ -46,6 +46,25 @@ class ProductService {
     }
 
     /**
+     * @return null|Product[]
+     */
+    public function getProducts() {
+        $products = $this->doctrine
+            ->getRepository('AppBundle:Product')
+            ->findBy(
+                [],
+                [],
+                20,
+                0
+            );
+        if (!$products) {
+            return null;
+        }
+
+        return $products;
+    }
+
+    /**
      * @param int $productId
      * @return null|Product
      */

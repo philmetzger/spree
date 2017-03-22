@@ -93,7 +93,7 @@ class ImportProductsCommand extends ContainerAwareCommand {
                 $productName,
                 $productDescription,
                 $productUrl,
-                $productImage,
+                $this->addhttp($productImage),
                 '',
                 $productPrice,
                 $category->getId(),
@@ -109,6 +109,17 @@ class ImportProductsCommand extends ContainerAwareCommand {
         }
 
         $output->writeln('Done. Found = ' . $found . '. Not found = ' . $notFound . '.');
+    }
+
+    /**
+     * @param string $url
+     * @return string
+     */
+    private function addhttp($url) {
+        if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+            $url = "http://" . $url;
+        }
+        return $url;
     }
 
     /**

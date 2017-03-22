@@ -23,7 +23,7 @@
     box-sizing: border-box;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    margin-bottom: 10px;
+    margin: 1rem 20px 10px 0;
     width: 262px;
     background-color: #ffffff;
     padding: 10px;
@@ -39,4 +39,10 @@
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+}
+
+.product-list .column .header {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

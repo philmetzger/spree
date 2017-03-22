@@ -1,0 +1,2 @@
+php bin/console app:import-categories files/categories/fashionSubCategories.csv
+php bin/console app:import-products files/realProducts.csv
