@@ -19,10 +19,12 @@
                 <div class="profile-details-container">
                     <h1 class="ui large header">{{ name }}</h1>
                     <p class="ui small header username">{{ username }}</p>
-                    {% if description %}
-                        <div class="ui tiny header description">{{ description }}</div>
-                    {% endif %}
                 </div>
+                {% if description %}
+                    <div class="profile-description-container">
+                        <div class="ui tiny header description">{{ description }}</div>
+                    </div>
+                {% endif %}
                 <div class="profile-actions">
                     <button class="ui fluid basic button">
                         <i class="icon edit"></i>

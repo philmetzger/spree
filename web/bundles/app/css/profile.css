@@ -44,7 +44,6 @@
     margin-left: 20px;
     vertical-align: middle;
     display: inline-block;
-    max-width: 600px;
 }
 .profile-details-container .header {
     margin-bottom: 0;
@@ -59,6 +58,14 @@
 
 .profile-content .ui.menu .active {
     font-weight: bold;
+}
+
+.profile-description-container {
+    display: inline-block;
+    border-left: 1px solid #eaeaea;
+    padding-left: 20px;
+    height: 150px;
+    max-width: 300px;
 }
 
 .profile-actions {
