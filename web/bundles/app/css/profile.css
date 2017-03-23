@@ -1,13 +1,10 @@
 .container-profile {
-    position: relative;
     max-width: 1105px;
     margin: 20px auto;
 }
 
 .profile-info {
     position: relative;
-    float: left;
-    width: 325px;
     margin: 0 0 30px 15px;
     background: #fff;
     border-radius: 6px;
