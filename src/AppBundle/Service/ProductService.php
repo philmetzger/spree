@@ -82,6 +82,22 @@ class ProductService {
     }
 
     /**
+     * @param int $productId
+     * @return void
+     */
+    public function deleteByProductId($productId) {
+        $product = $this->doctrine
+            ->getRepository('AppBundle:Product')
+            ->find($productId);
+        if ($product) {
+            $em = $this->doctrine->getEntityManager();
+
+            $em->remove($product);
+            $em->flush();
+        }
+    }
+
+    /**
      * @param string $name
      * @param string $description
      * @param string $sourceUrl
@@ -94,6 +110,8 @@ class ProductService {
      * @param string $size
      * @param string $gender
      * @param string $brand
+     *
+     * @return Product
      */
     public function addProduct($name, $description, $sourceUrl, $imagePrimary, $imageSecondary, $price,
                                $categoryId, $category, $color, $size, $gender, $brand) {
@@ -119,5 +137,7 @@ class ProductService {
         $em->flush();
 
         $em->clear();
+
+        return $product;
     }
 }

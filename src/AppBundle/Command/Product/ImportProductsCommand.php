@@ -89,7 +89,7 @@ class ImportProductsCommand extends ContainerAwareCommand {
 
             $productPrice = floatval(str_replace(',', '.', str_replace('.', '', $productPrice)));
 
-            $productService->addProduct(
+            $product = $productService->addProduct(
                 $productName,
                 $productDescription,
                 $productUrl,
@@ -103,6 +103,13 @@ class ImportProductsCommand extends ContainerAwareCommand {
                 $productGender,
                 $productBrand
             );
+
+            $output->writeln('Copying image for Product[' . $product->getId() .']: ' . $product->getImageUrlPrimary());
+            try {
+                copy($product->getImageUrlPrimary(), 'web/bundles/app/image/product/' . $product->getId() . '.jpeg');
+            } catch (\Exception $e) {
+                $productService->deleteByProductId($product->getId());
+            }
 
             $found++;
             gc_collect_cycles();
