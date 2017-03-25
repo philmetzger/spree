@@ -96,11 +96,13 @@
 }
 .profile-edit-container .profile-image-container {
     width: inherit;
-    margin-bottom: 15px;
     display: inline-block;
 }
 .profile-edit-container .profile-image-container .change-photo-container {
     display: inline-block;
     margin-left: 20px;
+}
+.profile-edit-container .edit-profile-photo {
+    margin-bottom: 20px;
 }
 /* END PROFILE EDIT */

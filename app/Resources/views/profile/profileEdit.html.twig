@@ -8,10 +8,21 @@
 {% block body %}
     <div class="container-profile">
         <div class="profile-edit-container">
-            <h3 class="ui header">Edit profile</h3>
-            <form class="ui form" action="/profile/{{ username }}/edit/save" method="post">
+            <h2 class="ui header">Edit profile</h2>
+
+            {% if errors %}
+                <div class="ui error message">
+                    <div class="ui list">
+                        {% for error in errors %}
+                            <div class="item">{{ error.message }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <h3 class="ui header">Profile photo</h3>
+            <div class="ui edit-profile-photo">
                 <div class="field">
-                    <label>Photo</label>
                     <div class="profile-image-container">
                         <div class="ui small image">
                             <div class="profile-image">
@@ -23,6 +34,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <h3 class="ui header">Profile details</h3>
+            <form class="ui form" action="/profile/{{ username }}/edit" method="post">
                 <div class="field">
                     <label>Name</label>
                     <div class="field">
@@ -31,7 +46,7 @@
                 </div>
                 <div class="field">
                     <label>Description</label>
-                    <textarea rows="2" maxlength="255" name="description">{{ description }}</textarea>
+                    <textarea rows="2" maxlength="500" name="description">{{ description }}</textarea>
                 </div>
                 <Button class="ui button primary" tabindex="0">Save</Button>
             </form>

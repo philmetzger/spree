@@ -38,7 +38,7 @@ class Account {
      *      min = 2,
      *      max = 255,
      *      minMessage = "Your username must be at least {{ limit }} characters long",
-     *      maxMessage = "Your username cannot be longer than {{ limit }} characters"
+     *      maxMessage = "Your username cannot be more than {{ limit }} characters"
      * )
      */
     private $username;
@@ -53,14 +53,18 @@ class Account {
      *      min = 2,
      *      max = 255,
      *      minMessage = "Your name must be at least {{ limit }} characters long",
-     *      maxMessage = "Your name cannot be longer than {{ limit }} characters"
+     *      maxMessage = "Your name cannot be more than {{ limit }} characters"
      * )
      */
     private $displayName;
 
     /**
-     * @ORM\Column(name="description", type="string")
+     * @ORM\Column(name="description", type="string", length=256)
      * @param string $description
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Your description cannot be more than {{ limit }} characters"
+     * )
      */
     private $description;
 
@@ -87,7 +91,7 @@ class Account {
      *      min = 6,
      *      max = 255,
      *      minMessage = "Your password must be at least {{ limit }} characters long",
-     *      maxMessage = "Your password cannot be longer than {{ limit }} characters"
+     *      maxMessage = "Your password cannot be more than {{ limit }} characters"
      * )
      */
     private $password;

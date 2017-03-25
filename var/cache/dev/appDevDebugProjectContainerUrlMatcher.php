@@ -171,11 +171,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'profileEdit')), array (  'username' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileEditController::profileEditAction',));
             }
 
-            // profileEditSave
-            if (preg_match('#^/profile/(?P<username>[^/]++)/edit/save$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'profileEditSave')), array (  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileEditController::profileEditSaveAction',));
-            }
-
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
