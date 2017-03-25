@@ -7,8 +7,34 @@
 
 {% block body %}
     <div class="container-profile">
-        <div class="profile-info">
-
+        <div class="profile-edit-container">
+            <h3 class="ui header">Edit profile</h3>
+            <form class="ui form" action="/profile/{{ username }}/edit/save" method="post">
+                <div class="field">
+                    <label>Photo</label>
+                    <div class="profile-image-container">
+                        <div class="ui small image">
+                            <div class="profile-image">
+                                {{ firstLetter }}
+                            </div>
+                        </div>
+                        <div class="change-photo-container">
+                            <Button class="ui button" tabindex="0">Change photo</Button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Name</label>
+                    <div class="field">
+                        <input type="text" name="displayName" placeholder="Name" value="{{ displayName }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea rows="2" maxlength="255" name="description">{{ description }}</textarea>
+                </div>
+                <Button class="ui button primary" tabindex="0">Save</Button>
+            </form>
         </div>
     </div>
 {% endblock %}

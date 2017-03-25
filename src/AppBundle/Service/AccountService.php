@@ -57,6 +57,20 @@ class AccountService {
     }
 
     /**
+     * @param Account $account
+     * @return null|Account
+     */
+    public function save($account) {
+        $em = $this->doctrine->getManager();
+
+        $em->persist($account);
+
+        $em->flush();
+
+        return $account;
+    }
+
+    /**
      * @param string $username
      * @return null|Account
      */

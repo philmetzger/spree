@@ -21,6 +21,10 @@
                         <a class="item" data-value="drop" href="/logout">Log out</a>
                     </div>
                 </div>
+
+                {% if displayName %}
+                    <a class="item" href="/profile/{{ username }}">{{ displayName }}</a>
+                {% endif %}
             {% endif %}
         </div>
     </div>

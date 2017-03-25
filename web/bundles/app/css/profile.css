@@ -82,3 +82,25 @@
 .profile-actions .button:last-child {
     margin-bottom: 0;
 }
+
+/* PROFILE EDIT */
+
+.profile-edit-container {
+    margin: 0 auto 20px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    padding: 20px;
+    max-width: 600px;
+}
+.profile-edit-container .profile-image-container {
+    width: inherit;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.profile-edit-container .profile-image-container .change-photo-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+/* END PROFILE EDIT */

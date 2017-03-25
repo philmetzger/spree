@@ -12,10 +12,12 @@ class HeaderController extends Action {
         /* @var \AppBundle\Service\AccountService $accountService */
         $accountService = $this->get('app.account');
         $username = null;
+        $displayName = null;
         if ($session->isLoggedIn()) {
             $account = $accountService->getById($session->getAccountId());
             if ($account) {
                 $username = $account->getUsername();
+                $displayName = $account->getDisplayName();
             }
         }
 
@@ -24,6 +26,7 @@ class HeaderController extends Action {
         $data = [
             'isLoggedIn' => $session->isLoggedIn(),
             'username' => $username,
+            'displayName' => $displayName,
             'menu' => [
                 'isSignup' => $currentRunningRoute == 'signup',
                 'isLogin' => $currentRunningRoute == 'login',
