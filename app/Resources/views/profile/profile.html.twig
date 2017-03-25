@@ -8,37 +8,35 @@
 {% block body %}
     <div class="container-profile">
         <div class="profile-info">
-            <div class="profile-info-essentials">
-                <div class="profile-image-container">
-                    <div class="ui small image">
-                        <div class="profile-image">
-                            {{ firstLetter }}
-                        </div>
+            <div class="profile-image-container">
+                <div class="ui small image">
+                    <div class="profile-image">
+                        {{ firstLetter }}
                     </div>
                 </div>
-                <div class="profile-details-container">
-                    <h1 class="ui large header">{{ name }}</h1>
-                    <p class="ui small header username">{{ username }}</p>
-                </div>
+            </div>
+            <div class="profile-details-container">
+                <h1 class="ui large header">{{ name }}</h1>
+                <p class="ui small header username">{{ username }}</p>
+            </div>
+            <div class="profile-description-container">
                 {% if description %}
-                    <div class="profile-description-container">
-                        <div class="ui tiny header description">{{ description }}</div>
-                    </div>
+                    <div class="description">{{ description }}</div>
                 {% endif %}
-                <div class="profile-actions">
-                    <button class="ui fluid basic button">
-                        <i class="icon edit"></i>
-                        Edit profile
-                    </button>
-                    <button class="ui fluid basic button">
-                        <i class="icon add user"></i>
-                        Follow
-                    </button>
-                    <button class="ui fluid basic button">
-                        <i class="icon mail"></i>
-                        Message
-                    </button>
-                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="ui fluid basic button">
+                    <i class="icon edit"></i>
+                    Edit profile
+                </button>
+                <button class="ui fluid basic button">
+                    <i class="icon add user"></i>
+                    Follow
+                </button>
+                <button class="ui fluid basic button">
+                    <i class="icon mail"></i>
+                    Message
+                </button>
             </div>
         </div>
         <div class="profile-content">

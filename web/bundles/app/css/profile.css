@@ -1,27 +1,38 @@
 .container-profile {
-    max-width: 1105px;
+    max-width: 1050px;
     margin: 20px auto;
 }
 
 .profile-info {
-    position: relative;
     margin: 0 0 20px;
     background: #fff;
     border-radius: 4px;
     border: 1px solid rgba(34, 36, 38, 0.15);
-    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
     padding: 20px;
+    display: flex;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-info {
+        display: block;
+    }
+    .profile-info > div {
+        width: 100%;
+        padding: 0 0 10px;
+        border: none;
+        text-align: center;
+    }
 }
 
 .profile-content {
     font-size: 100%;
-    vertical-align: baseline;
     border: 0;
     background: transparent;
 }
 
 .profile-image-container {
-    display: inline-block;
+    width: 130px;
 }
 
 .profile-image-container .image {
@@ -33,17 +44,16 @@
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     font-size: 100px;
     position: relative;
-    top: 65px;
+    top: 55px;
 }
 
 .profile-details-container {
-    margin-left: 20px;
-    vertical-align: middle;
-    display: inline-block;
+    width: 300px;
+    padding: 0 20px;
 }
 .profile-details-container .header {
     margin-bottom: 0;
@@ -52,30 +62,23 @@
     color: #a2a2a2;
     font-weight: normal;
 }
-.profile-details-container .description {
-    text-align: left;
-}
 
 .profile-content .ui.menu .active {
     font-weight: bold;
 }
 
 .profile-description-container {
-    display: inline-block;
-    border-left: 1px solid #eaeaea;
-    padding-left: 20px;
-    height: 150px;
-    max-width: 300px;
+    flex: 1;
+    padding: 0 20px;
 }
 
 .profile-actions {
-    display: inline-block;
-    float: right;
-    border-left: 1px solid #eaeaea;
+    width: 180px;
     padding-left: 20px;
-    width: 200px;
-    height: 150px;
 }
 .profile-actions .button {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+.profile-actions .button:last-child {
+    margin-bottom: 0;
 }
