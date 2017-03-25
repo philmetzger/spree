@@ -162,8 +162,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // app_profile_profile_profile
-            if (preg_match('#^/profile(?:/(?P<username>[^/]++)(?:/(?P<submenu>[^/]++))?)?$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/profile(?:/(?P<username>[^/]++)(?:/(?P<submenu>(?!edit)))?)?$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_profile_profile_profile')), array (  'username' => NULL,  'submenu' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileController::profileAction',));
+            }
+
+            // profileEdit
+            if (preg_match('#^/profile/(?P<username>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'profileEdit')), array (  'username' => NULL,  '_controller' => 'AppBundle\\Controller\\Profile\\ProfileEditController::profileEditAction',));
             }
 
         }

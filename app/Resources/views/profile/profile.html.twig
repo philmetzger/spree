@@ -25,18 +25,23 @@
                 {% endif %}
             </div>
             <div class="profile-actions">
-                <button class="ui fluid basic button">
-                    <i class="icon edit"></i>
-                    Edit profile
-                </button>
-                <button class="ui fluid basic button">
-                    <i class="icon add user"></i>
-                    Follow
-                </button>
-                <button class="ui fluid basic button">
-                    <i class="icon mail"></i>
-                    Message
-                </button>
+                {% if isCurrentAccount %}
+                    <a class="ui fluid basic button" href="/profile/{{ username }}/edit">
+                        <i class="icon edit"></i>
+                        Edit profile
+                    </a>
+                {% else %}
+                    {% if isLoggedIn %}
+                        <button class="ui fluid basic button">
+                            <i class="icon add user"></i>
+                            Follow
+                        </button>
+                        <button class="ui fluid basic button">
+                            <i class="icon mail"></i>
+                            Message
+                        </button>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
         <div class="profile-content">
