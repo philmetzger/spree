@@ -150,6 +150,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        // loadProducts
+        if ($pathinfo === '/loadProducts') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Home\\FilterController::loadProducts',  '_route' => 'loadProducts',);
+        }
+
         // home
         if ($pathinfo === '/home') {
             return array (  '_controller' => 'AppBundle\\Controller\\Home\\HomeController::homeAction',  '_route' => 'home',);

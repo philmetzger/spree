@@ -11,21 +11,9 @@
             {{ render(controller("AppBundle:Home\\Filter:filter")) }}
 
             <div class="product-list">
-                <div class="ui four column grid">
+                <div class="ui four column grid js-products">
                     {% for product in products %}
-                        <div class="column" title="{{ product.name }}">
-                            <div class="ui fluid card">
-                                <a class="image" href="#">
-                                    <img src="{{ asset('bundles/app/image/product/' ~ product.id ~ '.jpeg') }}">
-                                </a>
-                                <div class="content">
-                                    <a class="header">{{ product.name }}</a>
-                                    <div class="meta">
-                                        <span>{{ product.price }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{ render(controller("AppBundle:Home\\ProductItem:productItem", {'product': product})) }}
                     {% endfor %}
                 </div>
             </div>

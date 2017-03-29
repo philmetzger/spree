@@ -4,13 +4,13 @@
         <div class="menu">
             <div class="field">
                 <div class="ui checkbox">
-                    <input type="checkbox" name="Women">
+                    <input type="checkbox" name="gender[Women]">
                     <label>Women</label>
                 </div>
             </div>
             <div class="field">
                 <div class="ui checkbox">
-                    <input type="checkbox" name="Men">
+                    <input type="checkbox" name="gender[Men]">
                     <label>Men</label>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             {% for key,value in mainCategories %}
                 <div class="field">
                     <div class="ui checkbox">
-                        <input type="checkbox" name="{{ key }}">
+                        <input type="checkbox" name="category[{{ key }}]">
                         <label>{{ value }}</label>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
         <div class="ui tiny form">
             <div class="two fields">
                 <div class="field">
-                    <input placeholder="Min" type="text" name="pmin">
+                    <input placeholder="Min" type="text" name="price[min]">
                 </div>
                 <span class="dash">&mdash;</span>
                 <div class="field">
-                    <input placeholder="Max" type="text" name="pmax">
+                    <input placeholder="Max" type="text" name="price[max]">
                 </div>
             </div>
         </div>
@@ -57,11 +57,31 @@
             {% for key,value in colors %}
                 <div class="field">
                     <div class="ui checkbox">
-                        <input type="checkbox" name="{{ value }}">
+                        <input type="checkbox" name="color[{{ value }}]">
                         <label>{{ value }}</label>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+
+    <script>
+        $('.checkbox').checkbox();
+        $('.checkbox').click(function () {
+            // to get the input
+            var $input = $(this).find('input');
+            console.info($input.prop('checked'), $input.prop('name'));
+            $.ajax({
+                type:'POST',
+                url: '/loadProducts',
+                data: {
+                    'test': true,
+                },
+                success: function(response) {
+                    console.log(response);
+                    $('.js-products').html(response);
+                }});
+            return false;
+        });
+    </script>
 </div>

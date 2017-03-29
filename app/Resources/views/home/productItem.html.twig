@@ -1,0 +1,13 @@
+<div class="column" title="{{ product.name }}">
+    <div class="ui fluid card">
+        <a class="image" href="#">
+            <img src="{{ asset('bundles/app/image/product/' ~ product.id ~ '.jpeg') }}">
+        </a>
+        <div class="content">
+            <a class="header">{{ product.name }}</a>
+            <div class="meta">
+                <span>{{ product.price }}</span>
+            </div>
+        </div>
+    </div>
+</div>
