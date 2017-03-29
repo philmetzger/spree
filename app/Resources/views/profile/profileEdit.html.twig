@@ -20,7 +20,7 @@
                 </div>
             {% endif %}
 
-            <h3 class="ui header">Profile photo</h3>
+            <h3 class="ui header">Photo</h3>
             <div class="ui edit-profile-photo">
                 <div class="field">
                     <div class="profile-image-container">
@@ -30,13 +30,43 @@
                             </div>
                         </div>
                         <div class="change-photo-container">
-                            <Button class="ui button" tabindex="0">Change photo</Button>
+                            <Button class="ui button js-change-photo" tabindex="0">Change photo</Button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $( ".js-change-photo" ).click(function() {
+                        $('.ui.modal').modal('show');
+                    });
+                </script>
+
+                <div class="ui modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Profile photo
+                    </div>
+                    <div class="image content">
+                        <div class="profile-image-container">
+                            <div class="ui small image">
+                                <div class="profile-image">
+                                    {{ firstLetter }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui black deny button">
+                            Close
+                        </div>
+                        <div class="ui positive right button">
+                            Upload photo
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="ui header">Profile details</h3>
+            <h3 class="ui header">Details</h3>
             <form class="ui form" action="/profile/{{ username }}/edit" method="post">
                 <div class="field">
                     <label>Name</label>
